@@ -3,6 +3,7 @@ if (!sessionStorage.token || !sessionStorage.cid) { //
       location.href = 'login.html';
   
 }
+
 console.clear();
 console.log($('#user-name').text());
 $('#user-name').html(sessionStorage.usr);
