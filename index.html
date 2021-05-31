@@ -22,61 +22,71 @@
     <link rel="stylesheet" href="css/print.css">
     <style>
         .lds-ellipsis {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-  }
-  .lds-ellipsis div {
-    position: absolute;
-    top: 33px;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    background: rgb(151, 146, 146);
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
-  }
-  .lds-ellipsis div:nth-child(1) {
-    left: 8px;
-    animation: lds-ellipsis1 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(2) {
-    left: 8px;
-    animation: lds-ellipsis2 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(3) {
-    left: 32px;
-    animation: lds-ellipsis2 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(4) {
-    left: 56px;
-    animation: lds-ellipsis3 0.6s infinite;
-  }
-  @keyframes lds-ellipsis1 {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes lds-ellipsis3 {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  @keyframes lds-ellipsis2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(24px, 0);
-    }
-  }
-  
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 33px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: rgb(151, 146, 146);
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .lds-ellipsis div:nth-child(1) {
+            left: 8px;
+            animation: lds-ellipsis1 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(2) {
+            left: 8px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(3) {
+            left: 32px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(4) {
+            left: 56px;
+            animation: lds-ellipsis3 0.6s infinite;
+        }
+
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(24px, 0);
+            }
+        }
     </style>
 </head>
 
@@ -150,26 +160,26 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                       
 
-                       <!-- Nav Item - Alerts and Notifications -->
 
-                    
+                        <!-- Nav Item - Alerts and Notifications -->
+
+
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span id="user-name" class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <span id="user-name" class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas
+                                    McGee</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -208,8 +218,8 @@
                             <img src="img/triadonoss.png" style="max-width: 190px;" alt=""><br>
                             <span class="h6">Tracking System and Report Generator</span>
                         </div>
-                        
-                        
+
+
                         <div style="display: flex;">
                             <div class="" style="display: flex;align-items: flex-end;margin-right: .2rem;">
                                 <label for="sel1" style="margin-right: .2rem;">From: </label>
@@ -316,19 +326,21 @@
                                 </select>
                             </div>
                             <div class="dropdown no-arrow " style="margin-right: 1rem;">
-                                
+
                                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"
-                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false"><i
-                                    class="fas fa-user fa-sm text-white-50"></i> User Selection</a>
+                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"><i class="fas fa-user fa-sm text-white-50"></i> User
+                                    Selection</a>
 
                                 <ul id="userSelector" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <li class="dropdown-item" value="">Team</li>
-                                    <li class="dropdown-item" onclick="getId('me','Mondred Munsod')" value="Mondred Munsod">Mondred Munsod</li>
+                                    <li class="dropdown-item" onclick="getId('me','Mondred Munsod')"
+                                        value="Mondred Munsod">Mondred Munsod</li>
                                 </ul>
                             </div>
 
-                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="PrintElements.print(document.getElementsByClassName('container-fluid'))"><i
+                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                                onclick="PrintElements.print(document.getElementsByClassName('container-fluid'))"><i
                                     class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
 
                         </div>
@@ -346,10 +358,10 @@
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Total Hours</div>
 
-                                                
+
 
                                             <div id="thr" class="tt-hr h5 mb-0 font-weight-bold text-gray-800">
-                                                
+
 
                                             </div>
                                         </div>
@@ -381,7 +393,7 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
@@ -391,7 +403,7 @@
                                                 Unproductivity Time</div>
                                             <div id="uhr" class="tt-hr h5 mb-0 font-weight-bold text-gray-800">
 
-                                                
+
 
                                             </div>
                                         </div>
@@ -413,7 +425,7 @@
                                                 Idle Time</div>
                                             <div id="ihr" class="tt-hr h5 mb-0 font-weight-bold text-gray-800">
 
-                                                
+
 
                                             </div>
                                         </div>
@@ -426,7 +438,7 @@
                         </div>
 
                     </div>
-                    
+
                     <!-- Content Row -->
                     <div class="row">
 
@@ -439,13 +451,13 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Tools Rating</h6>
                                 </div>
                                 <div id="tools-rating" class="card-body">
-                                    
-                                    
+
+
                                 </div>
                             </div>
 
                             <!-- Color System -->
-                            
+
 
                         </div>
 
@@ -457,16 +469,16 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Activity Rating</h6>
                                 </div>
                                 <div id="act-rating" class="card-body">
-                                    
-                                    
-                                    
+
+
+
                                 </div>
                             </div>
 
-                            
+
 
                         </div>
-                        
+
                     </div>
 
                     <!-- Content Row -->
@@ -506,7 +518,7 @@
                     <div class="row">
 
                         <!-- Area Chart -->
-                        
+
                         <div class="col-xl-6 col-lg-6 col-sm-12">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
@@ -570,7 +582,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="row">
                         <!-- Pie Chart -->
@@ -599,7 +611,7 @@
                                 <div class="card-body">
                                     <div class="chart-pie pt-4 pb-2">
                                         <canvas id="projectPieChart"></canvas>
-                                        
+
                                     </div>
                                     <!-- <div class="mt-4 text-center small">
                                         <span class="mr-2">
@@ -640,7 +652,7 @@
                                 <div class="card-body">
                                     <div class="chart-pie pt-4 pb-2">
                                         <canvas id="taskPieChart"></canvas>
-                                        
+
                                     </div>
                                     <!-- <div class="mt-4 text-center small">
                                         <span class="mr-2">
@@ -658,7 +670,7 @@
                         </div>
                     </div>
 
-                    
+
                     <div style="display: flex;justify-content: space-between;align-items: center;margin-top: 1rem;">
                         <h5>Prepared for: <span id="nameofuser">Danielle Maravilla</span></h5>
                         <h5>Period: <span id="reportperiod">Mar 16 - 31, 2021</span></h5>
@@ -732,11 +744,11 @@
     <script src="js/demo/chart-pie-demo.js"></script>
 
     <script src="js/demo/print_elements.js"></script>
-     <!-- Page level fetch scripts -->
-     <script src="js/demo/func.js"></script>
-     <script src="js/demo/fetch.js"></script> 
-     
-     <script src="js/functions.js"></script>
+    <!-- Page level fetch scripts -->
+    <script src="js/demo/func.js"></script>
+    <script src="js/demo/fetch.js"></script>
+
+    <script src="js/functions.js"></script>
     <script src="js/app.js"></script>
 
 </body>
