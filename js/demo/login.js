@@ -1,5 +1,5 @@
 if (sessionStorage.token && sessionStorage.cid) {
-    window.location.replace("file:///C:/Users/User/Downloads/Zips/startbootstrap-sb-admin-2-gh-pages%20(2)/startbootstrap-sb-admin-2-gh-pages/index.html");
+    window.location.replace("https://trusting-keller-b7cfcc.netlify.app/");
 }
 
 async function _getcomp(tkn){
@@ -27,7 +27,7 @@ async function _getcomp(tkn){
 
     }
     if(sessionStorage.cid){
-        window.location.replace("file:///C:/Users/User/Downloads/Zips/startbootstrap-sb-admin-2-gh-pages%20(2)/startbootstrap-sb-admin-2-gh-pages/index.html");
+        window.location.replace("https://trusting-keller-b7cfcc.netlify.app/");
       }
     return true;
   }
