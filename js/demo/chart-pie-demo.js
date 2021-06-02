@@ -32,35 +32,33 @@ function _pieChart(location, data){
 }
 
 function _pieC(loc,data){
-  if(!$(loc).hasClass('chartjs-render-monitor')){
-    var myPieChart = new Chart(loc, {
-      type: 'doughnut',
-      data: data.data,
-      options: {
-        maintainAspectRatio: false,
-        tooltips: {
-          backgroundColor: "rgb(255,255,255)",
-          bodyFontColor: "#858796",
-          borderColor: '#dddfeb',
-          borderWidth: 1,
-          xPadding: 15,
-          yPadding: 15,
-          displayColors: false,
-          caretPadding: 10,
-        },
-        legend: {
-          display: true
-        },
-        cutoutPercentage: 70,
-      },
-    });
-    
-    return myPieChart;
+  if($(loc).hasClass('chartjs-render-monitor')){
+    return addData(myPieChart,data.labels,data.data);
   }
-  //removeData(myPieChart);
-  myPieChart.update();
-  return addData(myPieChart,data.labels,data.data);
+  var myPieChart = new Chart(loc, {
+    type: 'doughnut',
+    data: data.data,
+    options: {
+      maintainAspectRatio: false,
+      tooltips: {
+        backgroundColor: "rgb(255,255,255)",
+        bodyFontColor: "#858796",
+        borderColor: '#dddfeb',
+        borderWidth: 1,
+        xPadding: 15,
+        yPadding: 15,
+        displayColors: false,
+        caretPadding: 10,
+      },
+      legend: {
+        display: true
+      },
+      cutoutPercentage: 70,
+    },
+  });
+  return myPieChart;
 }
+
 function addData(chart, label, data) {
     chart.data.labels.push(label);
     chart.data.datasets.forEach((dataset) => {
