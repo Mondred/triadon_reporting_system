@@ -54,9 +54,10 @@ function _pieC(loc,data){
         cutoutPercentage: 70,
       },
     });
+    chart.update();
     return myPieChart;
   }
-  removeData(myPieChart);
+  //removeData(myPieChart);
   return addData(myPieChart,data.labels,data.data);
 }
 function addData(chart, label, data) {
