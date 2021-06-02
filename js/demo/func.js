@@ -258,7 +258,7 @@ async function _gettsk(tkn,id){
             }],
           }
       }
-      _pieChart(pie2, _pie);
+      _pieC(pie2, _pie);
 }
 
 async function _stats(tkn,id){
