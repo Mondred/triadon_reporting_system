@@ -32,7 +32,7 @@ function _pieChart(location, data){
 }
 
 function _pieC(loc,data){
-  if(!loc.hasClass('chartjs-render-monitor')){
+  if(!$(loc).hasClass('chartjs-render-monitor')){
     var myPieChart = new Chart(location, {
       type: 'doughnut',
       data: data.data,
