@@ -37,7 +37,7 @@ const spnr = (id)=>{
     //}
   }; */
 
-  function getGroup(list,prop){
+  function getGroup(list,props){
     var result = []; 
   
     // iterate over each item in the original array
@@ -45,7 +45,7 @@ const spnr = (id)=>{
         // check if the item belongs in an already created group
         var added = result.some(function(group){
             // check if the item belongs in this group
-            var shouldAdd = properties.every(function(prop){
+            var shouldAdd = props.every(function(prop){
                 return (group[0][prop] === item[prop]);
             });
             // add item to this group if it belongs 
