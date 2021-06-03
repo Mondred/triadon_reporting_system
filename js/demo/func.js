@@ -2,8 +2,9 @@ let categorylist = [];
 
 function getApps(res){
 
-    getGroup(res['data'][0]);
+    let allres = getGroup(res['data'][0]);
 
+    console.log(allres['appscore'],allres['webscore']);
 
     let scorer =0;
     let scorer2 =0;
