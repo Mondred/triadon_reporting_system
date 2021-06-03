@@ -2,10 +2,7 @@ let categorylist = [];
 
 function getApps(res){
 
-    var result = groupBy(res['data'][0], function(item)
-      {
-        return [item.type, item.score];
-      });
+    var result = getGroup(res['data'][0]);
 
     console.log(result);
 
