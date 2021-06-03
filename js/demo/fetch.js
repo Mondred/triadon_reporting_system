@@ -47,9 +47,10 @@ function getId(id,uname){
 
   if (page===1) {
     _stats(token,id);
+    _getprj(token,id);
+    _gettsk(token,id);
   }
-  _getprj(token,id);
-  _gettsk(token,id);
+
   _statsSum(token,id,'2021'+fmo);
   _statsTS(token,id,'2021'+fmo);
   _timeUse(token,id);
