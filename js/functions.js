@@ -47,7 +47,7 @@ const spnr = (id)=>{
             
         });
             // check if the item belongs in this group
-        console.log(item);
+        console.log(item.category, item.type);
             // add item to this group if it belongs 
             
             // exit the loop when an item is added, continue if not
