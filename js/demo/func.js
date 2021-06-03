@@ -2,9 +2,8 @@ let categorylist = [];
 
 function getApps(res){
 
-    var result = getGroup(res['data'][0]);
+    getGroup(res['data'][0]);
 
-    console.log(result);
 
     let scorer =0;
     let scorer2 =0;
