@@ -24,7 +24,7 @@ const spnr = (id)=>{
                 }
                 
                 if (shouldAdd) {
-                    result.push(item);
+                    result.push(item.category,item.title);
                    
                     //console.log(item.category, item.title);
                 }
