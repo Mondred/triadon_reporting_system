@@ -38,7 +38,7 @@ const spnr = (id)=>{
   }; */
 
   function getGroup(list,props){
-    var {result,result2} = []; var {score,score2} = 0;
+    var result =[]; var result2 = []; var {score,score2} = 0;
   
     // iterate over each item in the original array
     list.forEach(function(item){
