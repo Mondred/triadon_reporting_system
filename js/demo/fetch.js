@@ -36,8 +36,8 @@ if (sessionStorage.token) {
 function getId(id,uname){
   fmo = $('#fmo option:selected').attr('name');
   tmo = $('#tmo option:selected').attr('name');
-  from = '2021-'+ fmo+'-'+$('#fdy').val()+'T05:00:00.000Z';
-  to = '2021-'+ tmo+'-'+$('#tdy').val()+'T20:00:00.001Z';
+  //from = '2021-'+ fmo+'-'+$('#fdy').val()+'T05:00:00.000Z';
+  //to = '2021-'+ tmo+'-'+$('#tdy').val()+'T20:00:00.001Z';
   sd = parseInt($('#fdy').val());
   rset = sd;
   $('#nameofuser').text(uname);
