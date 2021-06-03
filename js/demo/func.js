@@ -3,7 +3,7 @@ let categorylist = [];
 function getApps(res){
 
     let allres = getGroup(res['data'][0]);
-
+    
     console.log(allres['appscore'],allres['webscore']);
 
     let scorer =0;
@@ -50,16 +50,16 @@ function getApps(res){
 </div>
 
 <h4 class="small font-weight-bold">Native Apps <span
-    class="float-right" id="nar">${apps.nativeApps}%</span></h4>
+    class="float-right" id="nar">${allres['appscore']}%</span></h4>
 <div class="progress mb-4">
-<div class="progress-bar bg-warning" role="progressbar" style="width: ${apps.nativeApps}%"
+<div class="progress-bar bg-warning" role="progressbar" style="width: ${allres['appscore']}%"
     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
 <h4 class="small font-weight-bold">Web Apps <span
-    class="float-right" id="war">${apps.webApps}%</span></h4>
+    class="float-right" id="war">${allres['webscore']}%</span></h4>
 <div class="progress mb-4">
-<div class="progress-bar" role="progressbar" style="width: ${apps.webApps}%"
+<div class="progress-bar" role="progressbar" style="width: ${allres['webscore']}%"
     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
 </div>`;
 

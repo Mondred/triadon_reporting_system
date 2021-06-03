@@ -96,8 +96,8 @@ const spnr = (id)=>{
     return {
         web: result,
         app: result2,
-        webscore: tscore,
-        appscore: tscore2
+        webscore: tscore.toFixed(2),
+        appscore: tscore2.toFixed(2)
     };
   }
 
