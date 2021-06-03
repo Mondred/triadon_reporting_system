@@ -5,7 +5,7 @@ if (!sessionStorage.token || !sessionStorage.cid) { //
 }
 
 console.clear();
-console.log($('#user-name').text());
+//console.log($('#user-name').text());
 $('#user-name').html(sessionStorage.usr);
 $('#user-role').html('<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>'+sessionStorage.pln);
 
