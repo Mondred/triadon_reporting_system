@@ -43,11 +43,29 @@ const spnr = (id)=>{
     // iterate over each item in the original array
     list.forEach(function(item){
         // check if the item belongs in an already created group
-        result.forEach(g=>{
+        if (item.type === 'web') {
+
+            let shouldAdd = true;
+            if (result.length) {
+                result.forEach(cat => {
+                    if (item.category === cat) {
+                        shouldAdd = false;
+                    }
+                });
+            }
             
-        });
+            if (shouldAdd) {
+                result.push(item.category);
+                console.log(item.category);
+            }
+        }
+
+
+        if (item.type === 'app') {
+            
+        }
             // check if the item belongs in this group
-        console.log(item.category, item.type);
+        //console.log(item.category, item.type);
             // add item to this group if it belongs 
             
             // exit the loop when an item is added, continue if not
