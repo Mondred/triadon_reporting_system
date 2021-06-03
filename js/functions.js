@@ -5,37 +5,6 @@ const spnr = (id)=>{
     }
 }
 
-// CSS Loader end
-
-/* Array.prototype.defineProperty = function('groupByProperties') {
-    //value : function(properties){                       
-        // will contain grouped items
-        var result = []; 
-  
-        // iterate over each item in the original array
-        this.forEach(function(item){
-            // check if the item belongs in an already created group
-            var added = result.some(function(group){
-                // check if the item belongs in this group
-                var shouldAdd = properties.every(function(prop){
-                    return (group[0][prop] === item[prop]);
-                });
-                // add item to this group if it belongs 
-                if (shouldAdd) {
-                    group.push(item);
-                }
-                // exit the loop when an item is added, continue if not
-                return shouldAdd;
-            });
-  
-            // no matching group was found, so a new group needs to be created for this item
-            if (!added) {
-                result.push([item]);
-            }
-        });
-        return result;
-    //}
-  }; */
 
   function getGroup(list,props){
     var result =[]; var result2 = []; var score = 0; var score2 = 0;
