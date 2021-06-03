@@ -55,10 +55,11 @@ const spnr = (id)=>{
                 }
                 
                 if (shouldAdd) {
-                    result.push(item.category);
-                    score+=item.score;
+                    result.push(item);
+                   
                     //console.log(item.category, item.title);
                 }
+                score+=item.score;
             }
 
 
@@ -73,10 +74,11 @@ const spnr = (id)=>{
                 }
                 
                 if (shouldAdd) {
-                    result2.push(item.category);
-                    score2+=item.score;
+                    result2.push(item);
+                    
                     //console.log(item.category, item.title);
                 }
+                score2+=item.score;
             }
             // check if the item belongs in this group
             
@@ -89,9 +91,14 @@ const spnr = (id)=>{
         // no matching group was found, so a new group needs to be created for this item
     let tscore = ((score/result.length)*100)/4;
     let tscore2 = ((score2/result2.length)*100)/4;
-    console.log(tscore.toFixed(2),tscore2.toFixed(2));
+    //console.log(tscore.toFixed(2),tscore2.toFixed(2));
 
-    return result;
+    return {
+        web: result,
+        app: result2,
+        webscore: tscore,
+        appscore: tscore2
+    };
   }
 
   function groupBy( array , f )
