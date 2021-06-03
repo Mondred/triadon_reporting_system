@@ -101,21 +101,120 @@ const spnr = (id)=>{
     };
   }
 
-  function groupBy( array , f )
+  function getweekly( dt )
   {
-    var groups = {};
-    array.forEach( function( o )
-    {
-      var group = JSON.stringify( f(o) );
-      groups[group] = groups[group] || [];
-      groups[group].push( o );  
-    });
-    return Object.keys(groups).map( function( group )
-    {
-      return groups[group]; 
-    })
+    console.log(dt.web);
+    let innerhtm = `<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                </tr>
+            </tfoot>
+            <tbody>
+               
+                <tr>
+                    <td>Michael Bruce</td>
+                    <td>Javascript Developer</td>
+                    <td>Singapore</td>
+                    <td>29</td>
+                    <td>2011/06/27</td>
+                    <td>$183,000</td>
+                </tr>
+                <tr>
+                    <td>Donna Snider</td>
+                    <td>Customer Support</td>
+                    <td>New York</td>
+                    <td>27</td>
+                    <td>2011/01/25</td>
+                    <td>$112,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>`
+
+$('#tbl-apps').empty();
+$('#tbl-apps').append(innerhtm);
   }
   
+  function getRange( res ){
+    let scorer =0;
+    let scorer2 =0;
+    let scorer3 =0;
+    let counter =0;
+    let counter2 =0;
+    let counter3 =0;
+    let tsh =0;
+    res['data'].forEach(r => {
+        r.forEach(t=>{
+            if (t.type === 'app') {
+                //console.log(t.value);
+                scorer = scorer + t.score;
+                counter+= 1;
+            }
+            if (t.type === 'web') {
+                //console.log(t.value);
+                scorer2 = scorer2 + t.score;
+                counter2+= 1;
+            }
+            scorer3 = scorer3 + t.score;
+            counter3+= 1;
+            tsh +=t.time;
+        });
+    });
+    //var pr = (this.state.res[4] * 100);
+    var ap = ((scorer3/counter3)*100/4);
+    //console.log(pr);
+    let apps =  {
+        nativeApps: ((scorer/counter)*100/4).toFixed(2),
+        webApps: ((scorer2/counter2)*100/4).toFixed(2),
+        staffHours: _cHr(tsh)['h']+':'+_cHr(tsh)['m']+':'+_cHr(tsh)['s'],
+        allApps: ((scorer3/counter3)*100/4).toFixed(2),
+        //perform : ( ap + pr ) / 2
+    }
+
+    //console.log(apps.allApps);
+    let tr = `<h4 class="small font-weight-bold">Apps Utilization <span
+    class="float-right" id="aur">${apps.allApps}%</span></h4>
+<div class="progress mb-4">
+<div class="progress-bar bg-danger" role="progressbar" style="width: ${apps.allApps}%"
+    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<h4 class="small font-weight-bold">Native Apps <span
+    class="float-right" id="nar">${allres['appscore']}%</span></h4>
+<div class="progress mb-4">
+<div class="progress-bar bg-warning" role="progressbar" style="width: ${allres['appscore']}%"
+    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<h4 class="small font-weight-bold">Web Apps <span
+    class="float-right" id="war">${allres['webscore']}%</span></h4>
+<div class="progress mb-4">
+<div class="progress-bar" role="progressbar" style="width: ${allres['webscore']}%"
+    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+</div>`;
+
+$('#tools-rating').empty();
+$('#tools-rating').append(tr);
+  }
   
 
 

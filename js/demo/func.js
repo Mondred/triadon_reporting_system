@@ -2,69 +2,15 @@ let categorylist = [];
 
 function getApps(res){
 
-    let allres = getGroup(res['data'][0]);
+    let dt = getGroup(res['data'][0]);
     
-    console.log(allres['appscore'],allres['webscore']);
 
-    let scorer =0;
-    let scorer2 =0;
-    let scorer3 =0;
-    let counter =0;
-    let counter2 =0;
-    let counter3 =0;
-    let tsh =0;
-    res['data'].forEach(r => {
-        r.forEach(t=>{
-            if (t.type === 'app') {
-                //console.log(t.value);
-                scorer = scorer + t.score;
-                counter+= 1;
-            }
-            if (t.type === 'web') {
-                //console.log(t.value);
-                scorer2 = scorer2 + t.score;
-                counter2+= 1;
-            }
-            scorer3 = scorer3 + t.score;
-            counter3+= 1;
-            tsh +=t.time;
-        });
-    });
-    //var pr = (this.state.res[4] * 100);
-    var ap = ((scorer3/counter3)*100/4);
-    //console.log(pr);
-    let apps =  {
-        nativeApps: ((scorer/counter)*100/4).toFixed(2),
-        webApps: ((scorer2/counter2)*100/4).toFixed(2),
-        staffHours: _cHr(tsh)['h']+':'+_cHr(tsh)['m']+':'+_cHr(tsh)['s'],
-        allApps: ((scorer3/counter3)*100/4).toFixed(2),
-        //perform : ( ap + pr ) / 2
-    }
-
-    //console.log(apps.allApps);
-    let tr = `<h4 class="small font-weight-bold">Apps Utilization <span
-    class="float-right" id="aur">${apps.allApps}%</span></h4>
-<div class="progress mb-4">
-<div class="progress-bar bg-danger" role="progressbar" style="width: ${apps.allApps}%"
-    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-
-<h4 class="small font-weight-bold">Native Apps <span
-    class="float-right" id="nar">${allres['appscore']}%</span></h4>
-<div class="progress mb-4">
-<div class="progress-bar bg-warning" role="progressbar" style="width: ${allres['appscore']}%"
-    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-
-<h4 class="small font-weight-bold">Web Apps <span
-    class="float-right" id="war">${allres['webscore']}%</span></h4>
-<div class="progress mb-4">
-<div class="progress-bar" role="progressbar" style="width: ${allres['webscore']}%"
-    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-</div>`;
-
-$('#tools-rating').empty();
-$('#tools-rating').append(tr);
+if (page ===1) {
+  getRange( res );
+}
+if (page===2) {
+  getweekly( dt);
+}
 
 
 }
@@ -547,5 +493,6 @@ async function _timeUse(tkn,id){
     );
     
     const data = await resp.json();
+
     getApps(data);
 }
