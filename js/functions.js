@@ -89,7 +89,7 @@ const spnr = (id)=>{
         // no matching group was found, so a new group needs to be created for this item
     let tscore = ((score/result.length)*100)/4;
     let tscore2 = ((score2/result2.length)*100)/4;
-    console.log(tscore,tscore2);
+    console.log(tscore.toFixed(2),tscore2.toFixed(2));
 
     return result;
   }
