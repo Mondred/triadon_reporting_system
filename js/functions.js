@@ -52,10 +52,7 @@ const spnr = (id)=>{
     })
   }
   
-  var result = groupBy(list, function(item)
-  {
-    return [item.lastname, item.age];
-  });
+  
 
 
   // Variable declaration for Date From and To

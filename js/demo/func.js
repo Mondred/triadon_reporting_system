@@ -2,9 +2,12 @@ let categorylist = [];
 
 function getApps(res){
 
-    categorylist = res['data'].defineProperty('web').value;
+    var result = groupBy(res['data'], function(item)
+      {
+        return [item.type, item.score];
+      });
 
-    console.log(categorylist);
+    console.log(result);
 
     let scorer =0;
     let scorer2 =0;
