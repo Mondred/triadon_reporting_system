@@ -338,7 +338,7 @@ async function _statsTS(tkn,id,moyr){
       let i = 1;let t = [];let ds = [];
       data['data'].forEach(res => {
           if (res.length) {
-            //console.log(res[0].total);
+            console.log(res[0].total);
             let rest = res[0].total + 1800;
             t.push(_cHr(rest)['h'] +'.'+_cHr(rest)['m']);
           }else{
@@ -346,7 +346,7 @@ async function _statsTS(tkn,id,moyr){
           }
           i+=1;
       }); 
-      console.log(data['data']); //*/
+      //console.log(data['data']); //*/
      /*
        let i = 1;let t = [];let ds = [];
       
@@ -364,7 +364,7 @@ async function _statsTS(tkn,id,moyr){
       //console.log(data['data']);
       
 
-      console.log(t);
+      //console.log(t);
       for (let index = 1; index < i; index++) {
         //console.log(index);
         let d = moyr+String(sd).padStart(2,'0');
