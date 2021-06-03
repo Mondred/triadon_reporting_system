@@ -38,34 +38,35 @@ const spnr = (id)=>{
   }; */
 
   function getGroup(list,props){
-    var result = []; 
+    var result = []; var score = 0;
   
     // iterate over each item in the original array
     list.forEach(function(item){
-        // check if the item belongs in an already created group
-        if (item.type === 'web') {
+            // check if the item belongs in an already created group
+            if (item.type === 'web') {
 
-            let shouldAdd = true;
-            if (result.length) {
-                result.forEach(cat => {
-                    if (item.category === cat) {
-                        shouldAdd = false;
-                    }
-                });
+                let shouldAdd = true;
+                if (result.length) {
+                    result.forEach(cat => {
+                        if (item.category === cat) {
+                            shouldAdd = false;
+                        }
+                    });
+                }
+                
+                if (shouldAdd) {
+                    result.push(item.category);
+                    score+=item.score;
+                    //console.log(item.category, item.title);
+                }
             }
-            
-            if (shouldAdd) {
-                result.push(item.category);
-                console.log(item.category, item.title);
+
+
+            if (item.type === 'app') {
+                
             }
-        }
-
-
-        if (item.type === 'app') {
-            
-        }
             // check if the item belongs in this group
-        //console.log(item.category, item.type);
+            
             // add item to this group if it belongs 
             
             // exit the loop when an item is added, continue if not
@@ -73,8 +74,9 @@ const spnr = (id)=>{
         });
 
         // no matching group was found, so a new group needs to be created for this item
-       
-        
+    let tscore = ((score/result.length)*100)/4;
+    console.log(tscore);
+    
     return result;
   }
 
