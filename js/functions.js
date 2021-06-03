@@ -7,8 +7,8 @@ const spnr = (id)=>{
 
 // CSS Loader end
 
-Array.prototype.defineProperty('groupByProperties', {
-    value : function(properties){                       
+/* Array.prototype.defineProperty = function('groupByProperties') {
+    //value : function(properties){                       
         // will contain grouped items
         var result = []; 
   
@@ -34,8 +34,29 @@ Array.prototype.defineProperty('groupByProperties', {
             }
         });
         return result;
-    }
+    //}
+  }; */
+
+  function groupBy( array , f )
+  {
+    var groups = {};
+    array.forEach( function( o )
+    {
+      var group = JSON.stringify( f(o) );
+      groups[group] = groups[group] || [];
+      groups[group].push( o );  
+    });
+    return Object.keys(groups).map( function( group )
+    {
+      return groups[group]; 
+    })
+  }
+  
+  var result = groupBy(list, function(item)
+  {
+    return [item.lastname, item.age];
   });
+
 
   // Variable declaration for Date From and To
     var fmo = '';
