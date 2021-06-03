@@ -56,7 +56,7 @@ const spnr = (id)=>{
             
             if (shouldAdd) {
                 result.push(item.category);
-                console.log(item.category);
+                console.log(item.category, item.title);
             }
         }
 
