@@ -38,6 +38,8 @@ function getId(id,uname){
   tmo = $('#tmo option:selected').attr('name');
   //from = '2021-'+ fmo+'-'+$('#fdy').val()+'T05:00:00.000Z';
   //to = '2021-'+ tmo+'-'+$('#tdy').val()+'T20:00:00.001Z';
+  from = '2021-05-01T05:00:00.000Z';
+  to = '2021-05-15T20:00:00.001Z';
   sd = parseInt($('#fdy').val());
   rset = sd;
   $('#nameofuser').text(uname);
