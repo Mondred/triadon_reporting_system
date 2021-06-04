@@ -7,7 +7,7 @@ const spnr = (id)=>{
 
 
   function getGroup(list,props){
-    var result =[]; var result2 = []; var score = 0; var score2 = 0; var weburl = [];
+    var result =[]; var result2 = []; var score = 0; var score2 = 0; var weburl = [];var dt = [];
   
     // iterate over each item in the original array
     list.forEach(function(item){
@@ -36,8 +36,8 @@ const spnr = (id)=>{
 
                     const url = item.value;
                     const { hostname } = new URL(url);  
-                    result.push(item);
-                   
+                    result.push(item.category);
+                    dt.push(item);
                     //console.log(item.category, item.title);
                 }
                 if (shouldAdd2) {
