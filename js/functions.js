@@ -100,7 +100,12 @@ const spnr = (id)=>{
                 <tr>
                     <td>${url}</td>
                     <td>--</td>
-                    <td>--</td>
+                    <td>
+                        <div class="progress" style="height: 3px;">
+                            <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: 80%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        80%
+                    </td>
                     <td>--</td>
                     <td>--</td>
                     <td>--</td>
