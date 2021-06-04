@@ -8,11 +8,19 @@ const spnr = (id)=>{
 
   function getGroup(list,props){
     var result =[]; var result2 = []; var score = 0; var score2 = 0; var weburl = [];var dt = [];
-  
+    var scorearray = [];var sci = 0;
     // iterate over each item in the original array
     list.forEach(function(item){
             // check if the item belongs in an already created group
             if (item.type === 'web') {
+
+                if (scorearray.length) {
+                    scorearray.forEach(items=>{
+                        if (item.category === items.category) {
+                            items.score += item.score;
+                        }
+                    });
+                }
 
                 let shouldAdd = true;
                 let shouldAdd2 = true;
@@ -83,6 +91,7 @@ const spnr = (id)=>{
     //console.log(tscore.toFixed(2),tscore2.toFixed(2));
 
     return {
+        sar: scorearray,
         ds: dt,
         url: weburl,
         web: result,
@@ -94,7 +103,7 @@ const spnr = (id)=>{
 
   function getweekly( dt )
   {
-    console.log(dt.ds);
+    console.log(dt.sar);
     let row = [];
     dt.ds.forEach (item => {
         let {title,time,value,type,score} = item;
