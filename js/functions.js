@@ -94,12 +94,25 @@ const spnr = (id)=>{
   function getweekly( dt )
   {
     console.log(dt.url);
+    let row = [];
+    dt.url.forEach (url => {
+        row.push(`
+                <tr>
+                    <td>${url}</td>
+                    <td>Javascript Developer</td>
+                    <td>Singapore</td>
+                    <td>29</td>
+                    <td>2011/06/27</td>
+                    <td>$183,000</td>
+                </tr>
+        `);
+    });
     let innerhtm = `<div class="card-body">
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Url</th>
                     <th>Position</th>
                     <th>Office</th>
                     <th>Age</th>
@@ -109,7 +122,7 @@ const spnr = (id)=>{
             </thead>
             <tfoot>
                 <tr>
-                    <th>Name</th>
+                    <th>Url</th>
                     <th>Position</th>
                     <th>Office</th>
                     <th>Age</th>
@@ -127,14 +140,7 @@ const spnr = (id)=>{
                     <td>2011/06/27</td>
                     <td>$183,000</td>
                 </tr>
-                <tr>
-                    <td>Donna Snider</td>
-                    <td>Customer Support</td>
-                    <td>New York</td>
-                    <td>27</td>
-                    <td>2011/01/25</td>
-                    <td>$112,000</td>
-                </tr>
+                ${row}
             </tbody>
         </table>
     </div>
