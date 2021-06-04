@@ -83,6 +83,7 @@ const spnr = (id)=>{
     //console.log(tscore.toFixed(2),tscore2.toFixed(2));
 
     return {
+        ds: dt,
         url: weburl,
         web: result,
         app: result2,
