@@ -24,7 +24,10 @@ const spnr = (id)=>{
                 }
                 
                 if (shouldAdd) {
-                    result.push(item.category,item.title);
+
+                    const url = item.value;
+                    const { hostname } = new URL(url);  
+                    result.push(hostname,item.title);
                    
                     //console.log(item.category, item.title);
                 }

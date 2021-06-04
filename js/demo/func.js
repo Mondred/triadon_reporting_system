@@ -5,12 +5,12 @@ function getApps(res){
     let dt = getGroup(res['data'][0]);
     
 
-if (page ===1) {
-  getRange( res );
-}
-if (page===2) {
-  getweekly( dt);
-}
+    if (page ===1) {
+      getRange( res );
+    }
+    if (page===2) {
+      getweekly( dt);
+    }
 
 
 }
