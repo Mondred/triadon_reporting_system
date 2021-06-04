@@ -105,7 +105,7 @@ const spnr = (id)=>{
                     <td>--</td>
                     <td>--</td>
                 </tr>
-        `);s
+        `);
     });
     let innerhtm = `${row}`;
 
