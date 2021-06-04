@@ -97,11 +97,11 @@ const spnr = (id)=>{
     console.log(dt.ds);
     let row = [];
     dt.ds.forEach (item => {
-        let {start,time,value,type,score} = item;
+        let {title,time,value,type,score} = item;
         let {hostname} = new URL(value);
         row.push(`
                 <tr>
-                    <td>${start}</td>
+                    <td>${title}</td>
                     <td>${time}</td>
                     <td>
                         <div class="progress" style="height: 3px;">
