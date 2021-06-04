@@ -93,7 +93,7 @@ const spnr = (id)=>{
 
   function getweekly( dt )
   {
-    console.log(dt.url);
+    console.log(dt.web);
     let row = [];
     dt.url.forEach (url => {
         row.push(`
