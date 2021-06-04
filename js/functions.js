@@ -20,6 +20,7 @@ const spnr = (id)=>{
                         if (item.category === items.category) {
                             shouldAdd0 = false;
                             items.time += item.time;
+                            items.score+=item.score;
                         }
                     });
                 }
