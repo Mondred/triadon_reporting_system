@@ -25,7 +25,7 @@ const spnr = (id)=>{
                     });
                 }
                 if (shouldAdd0) {
-                    scorearray.push(item);
+                    scorearray.push(item.splice(4,0,{count:0}));
                 }
 
 
