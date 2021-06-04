@@ -19,7 +19,7 @@ const spnr = (id)=>{
                     scorearray.forEach(items=>{
                         if (item.category === items.category) {
                             shouldAdd0 = false;
-                            items.score += item.score;
+                            items.time += item.time;
                         }
                     });
                 }
