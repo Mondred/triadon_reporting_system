@@ -144,7 +144,7 @@ const spnr = (id)=>{
             </tbody>
         </table>
     </div>
-</div>`
+</div>`;
 
 $('#tbl-apps').empty();
 $('#tbl-apps').append(innerhtm);
