@@ -98,7 +98,7 @@ const spnr = (id)=>{
 
     return {
         sar: scorearray,
-        ds: dt,
+        ds: dt.sort(function(a, b){return b-a}),
         url: weburl,
         web: result,
         app: result2,
