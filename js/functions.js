@@ -97,19 +97,20 @@ const spnr = (id)=>{
     console.log(dt.ds);
     let row = [];
     dt.ds.forEach (item => {
+        let {start,time,category,type,score} = item;
         row.push(`
                 <tr>
-                    <td>${item}</td>
-                    <td>${item}</td>
+                    <td>${start}</td>
+                    <td>${time}</td>
                     <td>
                         <div class="progress" style="height: 3px;">
                             <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: 80%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         80%
                     </td>
-                    <td>${item}</td>
-                    <td>${item}</td>
-                    <td>${item}</td>
+                    <td>${category}</td>
+                    <td>${type}</td>
+                    <td>${score}</td>
                 </tr>
         `);
     });
