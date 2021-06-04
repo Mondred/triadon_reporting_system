@@ -7,7 +7,7 @@ const spnr = (id)=>{
 
 
   function getGroup(list,props){
-    var result =[]; var result2 = []; var score = 0; var score2 = 0;
+    var result =[]; var result2 = []; var score = 0; var score2 = 0; var weburl = [];
   
     // iterate over each item in the original array
     list.forEach(function(item){
@@ -15,6 +15,7 @@ const spnr = (id)=>{
             if (item.type === 'web') {
 
                 let shouldAdd = true;
+                let shouldAdd2 = true;
                 if (result.length) {
                     result.forEach(cat => {
                         if (item.category === cat) {
@@ -22,12 +23,28 @@ const spnr = (id)=>{
                         }
                     });
                 }
-                
+                if (weburl.length) {
+                    weburl.forEach(wurl => {
+                        const url = item.value;
+                        const { hostname } = new URL(url);  
+                        if (hostname === wurl) {
+                            shouldAdd2 = false;
+                        }
+                    });
+                }
                 if (shouldAdd) {
 
                     const url = item.value;
                     const { hostname } = new URL(url);  
                     result.push(hostname,item.title);
+                   
+                    //console.log(item.category, item.title);
+                }
+                if (shouldAdd2) {
+
+                    const url = item.value;
+                    const { hostname } = new URL(url);  
+                    weburl.push(hostname);
                    
                     //console.log(item.category, item.title);
                 }
@@ -66,6 +83,7 @@ const spnr = (id)=>{
     //console.log(tscore.toFixed(2),tscore2.toFixed(2));
 
     return {
+        url: weburl,
         web: result,
         app: result2,
         webscore: tscore.toFixed(2),
