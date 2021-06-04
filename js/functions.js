@@ -93,7 +93,7 @@ const spnr = (id)=>{
 
   function getweekly( dt )
   {
-    console.log(dt.web);
+    console.log(dt.url);
     let innerhtm = `<div class="card-body">
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
