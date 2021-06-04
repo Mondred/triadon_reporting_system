@@ -98,6 +98,7 @@ const spnr = (id)=>{
     let row = [];
     dt.ds.forEach (item => {
         let {start,time,value,type,score} = item;
+        let {hostname} = new URL(value);
         row.push(`
                 <tr>
                     <td>${start}</td>
@@ -108,7 +109,7 @@ const spnr = (id)=>{
                         </div>
                         80%
                     </td>
-                    <td>${URL(value).hostname}</td>
+                    <td>${hostname}</td>
                     <td>${type}</td>
                     <td>${score}</td>
                 </tr>
