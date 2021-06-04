@@ -97,8 +97,8 @@ const spnr = (id)=>{
     //console.log(tscore.toFixed(2),tscore2.toFixed(2));
 
     return {
-        sar: scorearray,
-        ds: dt.sort(function(a, b){return b-a}),
+        sar: scorearray.sort(),
+        ds: dt,
         url: weburl,
         web: result,
         app: result2,
@@ -111,7 +111,7 @@ const spnr = (id)=>{
   {
     console.log(dt.sar);
     let row = [];
-    dt.ds.forEach (item => {
+    dt.sar.forEach (item => {
         let {title,time,value,type,score} = item;
         let {hostname} = new URL(value);
         row.push(`
