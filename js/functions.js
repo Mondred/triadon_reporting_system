@@ -36,7 +36,7 @@ const spnr = (id)=>{
 
                     const url = item.value;
                     const { hostname } = new URL(url);  
-                    result.push(hostname,item.title);
+                    result.push(item);
                    
                     //console.log(item.category, item.title);
                 }
