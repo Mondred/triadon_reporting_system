@@ -25,7 +25,7 @@ const spnr = (id)=>{
                     });
                 }
                 if (shouldAdd0) {
-                    scorearray.push(item.splice(4,0,{count:0}));
+                    scorearray.push(item);
                 }
 
 
@@ -111,6 +111,7 @@ const spnr = (id)=>{
   function getweekly( dt )
   {
     console.log(dt.sar);
+    let cnt = dt.sar.length;
     let row = [];
     dt.sar.forEach (item => {
         let {title,time,value,type,score} = item;
@@ -121,13 +122,13 @@ const spnr = (id)=>{
                     <td>${time}</td>
                     <td>
                         <div class="progress" style="height: 3px;">
-                            <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: 80%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: ${(score/cnt)*100/4}%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        80%
+                        ${(score/cnt)*100/4}%
                     </td>
                     <td>${hostname}</td>
                     <td>${type}</td>
-                    <td>${score}</td>
+                    <td>${score/cnt}</td>
                 </tr>
         `);
     });
