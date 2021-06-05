@@ -122,7 +122,7 @@ const spnr = (id)=>{
                     <td>${_cHr(time)['h'],_cHr(time)['m']}</td>
                     <td>
                         <div class="progress" style="height: 3px;">
-                            <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: ${(score/cnt)*100/4}%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: ${(score/4)*100}%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         ${score}%
                     </td>
