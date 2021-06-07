@@ -29,7 +29,7 @@ const spnr = (id)=>{
 
     let [app,score] = [[],0];
     list.forEach(item=>{
-        
+
             if (item.type === 'web') {}
 
             if (item.type === 'app') {
@@ -39,7 +39,7 @@ const spnr = (id)=>{
                         //
                         if (item.category === r.category) {
                             shouldAdd = false;
-                            console.log(r.category);
+                            r.time+=item.time;
                         }
                     });
                 }
@@ -51,6 +51,7 @@ const spnr = (id)=>{
             }
         });
     let tscore = ((score/app.length)*100)/4;
+    console.log(app);
 
     return {
         //web: web,
