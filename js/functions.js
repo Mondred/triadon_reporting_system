@@ -5,6 +5,25 @@ const spnr = (id)=>{
     }
 }
 
+function shouldAdd(data,list){
+    let shouldAdd = true;
+    if (list.length) {
+        list.forEach(items=>{
+            if (data.category === items.category) {
+                shouldAdd = false;
+                if (items.count) {
+                    items.count+=1;
+                }else{
+                    items.push({count:1});
+                }
+            }
+        });
+    }
+    return {
+        shouldAdd: shouldAdd,
+        dataset:list
+    }
+}
 
   function getGroup(list,props){
     var result =[]; var result2 = []; var score = 0; var score2 = 0; var weburl = [];var dt = [];
@@ -14,8 +33,8 @@ const spnr = (id)=>{
             // check if the item belongs in an already created group
             if (item.type === 'web') {
 
-                let shouldAdd0 = true;
-                if (scorearray.length) {
+                //let shouldAdd0 = true;
+                /* if (scorearray.length) {
                     scorearray.forEach(items=>{
                         if (item.category === items.category) {
                             shouldAdd0 = false;
@@ -23,8 +42,8 @@ const spnr = (id)=>{
                             items.score+=item.score;
                         }
                     });
-                }
-                if (shouldAdd0) {
+                } */
+                if (shouldAdd(item,scorearray)) {
                     scorearray.push(item);
                 }
 
