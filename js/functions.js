@@ -35,10 +35,10 @@ const spnr = (id)=>{
                 let shouldAdd = true;
                 if (app.length) {
                     app.forEach(r => {
-                        console.log(r);
-                        if (item.category === r) {
+                        //
+                        if (item.category === r.category) {
                             shouldAdd = false;
-                            
+                            console.log(r);
                         }
                     });
                 }
