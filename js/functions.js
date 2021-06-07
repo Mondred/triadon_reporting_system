@@ -40,6 +40,8 @@ const spnr = (id)=>{
                         if (item.category === r.category) {
                             shouldAdd = false;
                             r.time+=item.time;
+                            let s = (r.score+((item.score*100)/4))/2;
+                            r.score = s
                         }
                     });
                 }
