@@ -250,21 +250,21 @@ async function _stats(tkn,id){
               aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
       </div>`;
       
-      $('#prog-p').remove();
+      $('#prog-p').empty();
       $('#prog-p').append(`<div class="progress mt-2" style="height: 3px;">
                                 <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: ${pdr}"
                                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
                                 </div>
                             </div>
                             ${pdr}`);
-      $('#prog-u').remove();
+      $('#prog-u').empty();
       $('#prog-u').append(`<div class="progress mt-2" style="height: 3px;">
                                 <div class="progress-bar bg-warning animated--fade-in" role="progressbar" style="width:${upr}"
                                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
                                 </div>
                             </div>
                             ${upr}`);
-      $('#prog-i').remove();
+      $('#prog-i').empty();
       $('#prog-i').append(`<div class="progress mt-2" style="height: 3px;">
                                 <div class="progress-bar bg-danger animated--fade-in" role="progressbar" style="width: ${imr}"
                                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
