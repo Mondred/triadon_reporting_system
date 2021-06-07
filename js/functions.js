@@ -69,7 +69,7 @@ const spnr = (id)=>{
     let row = [];
     res.forEach (item => {
         let {title,time,value,type,score} = item;
-        let {hostname} = new URL(value);
+        //let {hostname} = new URL(value);
         row.push(`
                 <tr>
                     <td>${title}</td>
@@ -80,7 +80,7 @@ const spnr = (id)=>{
                         </div>
                         ${score}%
                     </td>
-                    <td>${hostname}</td>
+                    <td>${'www'}</td>
                     <td>${type}</td>
                 </tr>
         `);
