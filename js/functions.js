@@ -95,7 +95,7 @@ const spnr = (id)=>{
                 <tr>
                     <td>${title}</td>
                     <td>${((_cHr(time)['h'])? _cHr(time)['h']+'h:': '')+_cHr(time)['m']+'m'+'-'+time}</td>
-                    <td>${$(value).substring(0,50)}</td>
+                    <td>${value.substring(0,50)}</td>
                     <td>${type}</td>
                     <td>
                         <div class="progress" style="height: 3px;">
