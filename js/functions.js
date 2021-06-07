@@ -27,8 +27,8 @@ const spnr = (id)=>{
 
   function getGroup(list){
 
+    let [res,score] = [[],0];
     list.forEach(function(item){
-        let [res,score] = [[],0];
             if (item.type === 'web') {}
 
             if (item.type === 'app') {
