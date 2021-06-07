@@ -54,7 +54,7 @@ const spnr = (id)=>{
             }
         });
     let tscore = ((score/app.length)*100)/4;
-    //console.log(app);
+    console.log(app);
 
     return {
         //web: web,
@@ -72,7 +72,7 @@ const spnr = (id)=>{
         //let {hostname} = new URL(value);
         row.push(`
                 <tr>
-                    <td>${title}</td>
+                    <td>${value}</td>
                     <td>${_cHr(time)['h']+'h:'+_cHr(time)['m']+'m'}</td>
                     <td>
                         <div class="progress" style="height: 3px;">
