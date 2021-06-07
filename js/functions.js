@@ -80,7 +80,7 @@ const spnr = (id)=>{
                         </div>
                         ${score}%
                     </td>
-                    <td>${'www'}</td>
+                    <td>${value}</td>
                     <td>${type}</td>
                 </tr>
         `);
