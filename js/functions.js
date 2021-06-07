@@ -28,7 +28,8 @@ const spnr = (id)=>{
   function getGroup(list){
 
     let [app,score] = [[],0];
-    list.forEach(function(item){
+    list.forEach(item=>{
+        
             if (item.type === 'web') {}
 
             if (item.type === 'app') {
@@ -38,7 +39,7 @@ const spnr = (id)=>{
                         //
                         if (item.category === r.category) {
                             shouldAdd = false;
-                            console.log(r);
+                            console.log(r.category);
                         }
                     });
                 }
