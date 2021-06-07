@@ -249,20 +249,23 @@ async function _stats(tkn,id){
           <div class="progress-bar bg-danger animated--fade-in" role="progressbar" style="width: ${imr}"
               aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
       </div>`;
-
-      $('#phr-bar').append(`<div class="progress mt-2" style="height: 3px;">
+      
+      $('#prog-p').remove();
+      $('#prog-p').append(`<div class="progress mt-2" style="height: 3px;">
                                 <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: ${pdr}"
                                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
                                 </div>
                             </div>
                             ${pdr}`);
-      $('#uhr-bar').append(`<div class="progress mt-2" style="height: 3px;">
+      $('#prog-u').remove();
+      $('#prog-u').append(`<div class="progress mt-2" style="height: 3px;">
                                 <div class="progress-bar bg-warning animated--fade-in" role="progressbar" style="width:${upr}"
                                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
                                 </div>
                             </div>
                             ${upr}`);
-      $('#ihr-bar').append(`<div class="progress mt-2" style="height: 3px;">
+      $('#prog-i').remove();
+      $('#prog-i').append(`<div class="progress mt-2" style="height: 3px;">
                                 <div class="progress-bar bg-danger animated--fade-in" role="progressbar" style="width: ${imr}"
                                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
                                 </div>
