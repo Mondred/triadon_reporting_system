@@ -46,15 +46,17 @@ function getId(id,uname){
   $('#reportperiod').text(moment(fmo).format('MMM') + ' ' +  sd + ' - ' +$('#tdy').val() + ' 2021');
 
   if (page===1) {
-    _stats(token,id);
+    
     _getprj(token,id);
     _gettsk(token,id);
   }
-
+  _stats(token,id);
   //_statsSum(token,id,'2021'+fmo);
   //_statsTS(token,id,'2021'+fmo);
   _timeUse(token,id);
 }
+
+
 
 
 
