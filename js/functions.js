@@ -100,7 +100,7 @@ const spnr = (id)=>{
                 <tr>
                     <td>${title.substring(0,80)}</td>
                     <td>${((_cHr(time)['h'])? _cHr(time)['h']+'h:': '')+_cHr(time)['m']+'m'+'-'+time}</td>
-                    <td>${value}}</td>
+                    <td>${value}</td>
                     <td>${type}</td>
                     <td>
                         <div class="progress" style="height: 3px;">
