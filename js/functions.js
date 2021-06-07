@@ -30,7 +30,27 @@ const spnr = (id)=>{
     let [app,score] = [[],0];
     list.forEach(item=>{
 
-            if (item.type === 'web') {}
+            if (item.type === 'web') {
+                let shouldAdd = true;
+                if (app.length) {
+                    app.forEach(r => {
+                        //
+                        if (item.category === r.category) {
+                            shouldAdd = false;
+                            r.time+=item.time;
+                            let s = (r.score+((item.score*100)/4))/2;
+                            r.score = s
+                        }
+                    });
+                }
+                
+                if (shouldAdd) {
+                    item.score = (item.score*100)/4;
+                    app.push(item);
+                }
+                score+=item.score;
+
+            }
 
             if (item.type === 'app') {
                 let shouldAdd = true;
