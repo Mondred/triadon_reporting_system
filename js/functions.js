@@ -117,7 +117,7 @@ function shouldAdd(data,list){
     //console.log(tscore.toFixed(2),tscore2.toFixed(2));
 
     return {
-        sar: scorearray.sort(),
+        sar: scorearray.time.sort(),
         ds: dt,
         url: weburl,
         web: result,
