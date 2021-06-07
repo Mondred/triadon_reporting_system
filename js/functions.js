@@ -89,13 +89,18 @@ const spnr = (id)=>{
     let row = [];let totalTime = 0;
     res.forEach (item => {
         let {title,time,value,type,score} = item;
-        //let {hostname} = new URL(value);
+        
+        if (type==='web') {
+            let {hostname} = new URL(value);
+            value = hostname;
+        }
+        
         totalTime+=time;
         row.push(`
                 <tr>
                     <td>${title.substring(0,80)}</td>
                     <td>${((_cHr(time)['h'])? _cHr(time)['h']+'h:': '')+_cHr(time)['m']+'m'+'-'+time}</td>
-                    <td>${value.substring(0,80)}</td>
+                    <td>${value}}</td>
                     <td>${type}</td>
                     <td>
                         <div class="progress" style="height: 3px;">
