@@ -48,7 +48,7 @@ const spnr = (id)=>{
                 score+=item.score;
             }
         });
-    let tscore = ((score/res.length)*100)/4;
+    let tscore = ((score/app.length)*100)/4;
 
     return {
         //web: web,
