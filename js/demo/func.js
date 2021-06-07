@@ -9,7 +9,7 @@ function getApps(res){
       getRange( res );
     }
     if (page===2) {
-      getweekly( dt);
+      getweekly( dt['app']);
     }
 
 

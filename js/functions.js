@@ -5,91 +5,36 @@ const spnr = (id)=>{
     }
 }
 
-function shouldAdd(data,list){
-    let shouldAdd = true;
-    if (list.length) {
-        list.forEach(items=>{
-            if (data.category === items.category) {
-                shouldAdd = false;
-                if (items.count) {
-                    items.count+=1;
-                }else{
-                    items.push({count:1});
+    function shouldAdd(data,list){
+        let shouldAdd = true;
+        if (list.length) {
+            list.forEach(items=>{
+                if (data.category === items.category) {
+                    shouldAdd = false;
+                    if (items.count) {
+                        items.count+=1;
+                    }else{
+                        items.push({count:1});
+                    }
                 }
-            }
-        });
+            });
+        }
+        return {
+            shouldAdd: shouldAdd,
+            dataset:list
+        }
     }
-    return {
-        shouldAdd: shouldAdd,
-        dataset:list
-    }
-}
 
-  function getGroup(list,props){
-    var result =[]; var result2 = []; var score = 0; var score2 = 0; var weburl = [];var dt = [];
-    var scorearray = [];var sci = 0;
-    // iterate over each item in the original array
+  function getGroup(list){
+
     list.forEach(function(item){
-            // check if the item belongs in an already created group
-            if (item.type === 'web') {
-
-                let shouldAdd0 = true;
-                if (scorearray.length) {
-                    scorearray.forEach(items=>{
-                        if (item.category === items.category) {
-                            shouldAdd0 = false;
-                            items.time += item.time;
-                            items.score+=item.score;
-                        }
-                    });
-                }
-                if (shouldAdd0) {
-                    scorearray.push(item);
-                }
-
-
-                let shouldAdd = true;
-                let shouldAdd2 = true;
-                if (result.length) {
-                    result.forEach(cat => {
-                        if (item.category === cat) {
-                            shouldAdd = false;
-                        }
-                    });
-                }
-                if (weburl.length) {
-                    weburl.forEach(wurl => {
-                        const url = item.value;
-                        const { hostname } = new URL(url);  
-                        if (hostname === wurl) {
-                            shouldAdd2 = false;
-                        }
-                    });
-                }
-                if (shouldAdd) {
-
-                    const url = item.value;
-                    const { hostname } = new URL(url);  
-                    result.push(item.category);
-                    dt.push(item);
-                    //console.log(item.category, item.title);
-                }
-                if (shouldAdd2) {
-
-                    const url = item.value;
-                    const { hostname } = new URL(url);  
-                    weburl.push(hostname);
-                   
-                    //console.log(item.category, item.title);
-                }
-                score+=item.score;
-            }
-
+        let [res,score] = [[],0];
+            if (item.type === 'web') {}
 
             if (item.type === 'app') {
                 let shouldAdd = true;
-                if (result2.length) {
-                    result2.forEach(cat => {
+                if (res.length) {
+                    res.forEach(cat => {
                         if (item.category === cat) {
                             shouldAdd = false;
                         }
@@ -97,42 +42,26 @@ function shouldAdd(data,list){
                 }
                 
                 if (shouldAdd) {
-                    result2.push(item);
-                    
-                    //console.log(item.category, item.title);
+                    res.push(item);
                 }
-                score2+=item.score;
+                score+=item.score;
             }
-            // check if the item belongs in this group
-            
-            // add item to this group if it belongs 
-            
-            // exit the loop when an item is added, continue if not
-            
         });
-
-        // no matching group was found, so a new group needs to be created for this item
     let tscore = ((score/result.length)*100)/4;
     let tscore2 = ((score2/result2.length)*100)/4;
-    //console.log(tscore.toFixed(2),tscore2.toFixed(2));
 
     return {
-        sar: $(scorearray.time).sort(),
-        ds: dt,
-        url: weburl,
-        web: result,
-        app: result2,
+        web: web,
+        app: native,
         webscore: tscore.toFixed(2),
         appscore: tscore2.toFixed(2)
     };
   }
 
-  function getweekly( dt )
+  function getweekly(res)
   {
-    console.log(dt.sar);
-    let cnt = dt.sar.length;
     let row = [];
-    dt.sar.forEach (item => {
+    res.forEach (item => {
         let {title,time,value,type,score} = item;
         let {hostname} = new URL(value);
         row.push(`
