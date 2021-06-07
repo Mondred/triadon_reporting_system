@@ -34,9 +34,10 @@ const spnr = (id)=>{
             if (item.type === 'app') {
                 let shouldAdd = true;
                 if (res.length) {
-                    res.forEach(cat => {
-                        if (item.category === cat) {
+                    res.forEach(r => {
+                        if (item.category === r) {
                             shouldAdd = false;
+                            console.log(r);
                         }
                     });
                 }
@@ -47,8 +48,7 @@ const spnr = (id)=>{
                 score+=item.score;
             }
         });
-    let tscore = ((score/result.length)*100)/4;
-    let tscore2 = ((score2/result2.length)*100)/4;
+    let tscore = ((score/res.length)*100)/4;
 
     return {
         web: web,
