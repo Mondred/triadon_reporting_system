@@ -249,6 +249,14 @@ async function _stats(tkn,id){
           <div class="progress-bar bg-danger animated--fade-in" role="progressbar" style="width: ${imr}"
               aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
       </div>`;
+
+      $('#phr-bar').append(`
+                            <div class="progress" style="height: 3px;">
+                                <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: ${pdr}%"
+                                    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                            ${pdr}%`);
       
       $('#act-rating').empty();
       $('#act-rating').append(rating);
