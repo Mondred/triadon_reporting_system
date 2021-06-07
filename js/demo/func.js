@@ -2,14 +2,14 @@ let categorylist = [];
 
 function getApps(res){
 
-    getGroup(res['data'][0]);
+    let ds = getGroup(res['data'][0]);
     
     
     if (page ===1) {
       getRange( res );
     }
     if (page===2) {
-      //getweekly( dt['app']);
+      getweekly( ds['app']);
     }
 
 

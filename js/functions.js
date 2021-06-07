@@ -54,7 +54,7 @@ const spnr = (id)=>{
             }
         });
     let tscore = ((score/app.length)*100)/4;
-    console.log(app);
+    //console.log(app);
 
     return {
         //web: web,
@@ -76,13 +76,12 @@ const spnr = (id)=>{
                     <td>${_cHr(time)['h']+'h:'+_cHr(time)['m']+'m'}</td>
                     <td>
                         <div class="progress" style="height: 3px;">
-                            <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: ${(score/4)*100}%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: ${score}%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         ${score}%
                     </td>
                     <td>${hostname}</td>
                     <td>${type}</td>
-                    <td>${score}</td>
                 </tr>
         `);
     });
