@@ -47,7 +47,7 @@ const spnr = (id)=>{
                 }
                 
                 if (shouldAdd) {
-                    //item.score = (item.score*100)/4;
+                    item.score = (item.score*100)/4;
                     app.push(item);
                 }
                 score+=item.score;
