@@ -73,15 +73,15 @@ const spnr = (id)=>{
         row.push(`
                 <tr>
                     <td>${value}</td>
-                    <td>${_cHr(time)['h']+'h:'+_cHr(time)['m']+'m'}</td>
+                    <td>${((_cHr(time)['h'])? _cHr(time)['h']+'h:': '')+_cHr(time)['m']+'m'}</td>
+                    <td>${value}</td>
+                    <td>${type}</td>
                     <td>
                         <div class="progress" style="height: 3px;">
                             <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: ${score}%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         ${score}%
                     </td>
-                    <td>${value}</td>
-                    <td>${type}</td>
                 </tr>
         `);
     });
