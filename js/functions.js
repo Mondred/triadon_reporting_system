@@ -35,9 +35,10 @@ const spnr = (id)=>{
                 let shouldAdd = true;
                 if (app.length) {
                     app.forEach(r => {
+                        console.log(r);
                         if (item.category === r) {
                             shouldAdd = false;
-                            console.log(r);
+                            
                         }
                     });
                 }
@@ -52,7 +53,7 @@ const spnr = (id)=>{
 
     return {
         //web: web,
-        app: native,
+        app: app,
         //webscore: tscore.toFixed(2),
         //appscore: tscore2.toFixed(2)
     };
