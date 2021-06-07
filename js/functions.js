@@ -54,7 +54,7 @@ const spnr = (id)=>{
             }
         });
     let tscore = ((score/app.length)*100)/4;
-    console.log(app);
+    //console.log(app);
 
     return {
         //web: web,
@@ -66,10 +66,11 @@ const spnr = (id)=>{
 
   function getweekly(res)
   {
-    let row = [];
+    let row = [];let totalTime = 0;
     res.forEach (item => {
         let {title,time,value,type,score} = item;
         //let {hostname} = new URL(value);
+        totalTime+=time;
         row.push(`
                 <tr>
                     <td>${value}</td>
@@ -86,6 +87,7 @@ const spnr = (id)=>{
         `);
     });
     let innerhtm = `${row}`;
+    console.log(((_cHr(totalTime)['h'])? _cHr(totalTime)['h']+'h:': '')+_cHr(totalTime)['m']+'m');
 
 $('#tbl-apps').empty();
 $('#tbl-apps').append(innerhtm);
