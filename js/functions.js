@@ -33,8 +33,8 @@ function shouldAdd(data,list){
             // check if the item belongs in an already created group
             if (item.type === 'web') {
 
-                //let shouldAdd0 = true;
-                /* if (scorearray.length) {
+                let shouldAdd0 = true;
+                if (scorearray.length) {
                     scorearray.forEach(items=>{
                         if (item.category === items.category) {
                             shouldAdd0 = false;
@@ -42,8 +42,8 @@ function shouldAdd(data,list){
                             items.score+=item.score;
                         }
                     });
-                } */
-                if (shouldAdd(item,scorearray)) {
+                }
+                if (shouldAdd0) {
                     scorearray.push(item);
                 }
 
