@@ -27,14 +27,14 @@ const spnr = (id)=>{
 
   function getGroup(list){
 
-    let [res,score] = [[],0];
+    let [app,score] = [[],0];
     list.forEach(function(item){
             if (item.type === 'web') {}
 
             if (item.type === 'app') {
                 let shouldAdd = true;
-                if (res.length) {
-                    res.forEach(r => {
+                if (app.length) {
+                    app.forEach(r => {
                         if (item.category === r) {
                             shouldAdd = false;
                             console.log(r);
@@ -43,7 +43,7 @@ const spnr = (id)=>{
                 }
                 
                 if (shouldAdd) {
-                    res.push(item);
+                    app.push(item);
                 }
                 score+=item.score;
             }
@@ -51,10 +51,10 @@ const spnr = (id)=>{
     let tscore = ((score/res.length)*100)/4;
 
     return {
-        web: web,
+        //web: web,
         app: native,
-        webscore: tscore.toFixed(2),
-        appscore: tscore2.toFixed(2)
+        //webscore: tscore.toFixed(2),
+        //appscore: tscore2.toFixed(2)
     };
   }
 
