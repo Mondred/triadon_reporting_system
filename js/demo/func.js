@@ -12,7 +12,6 @@ function getApps(res){
       getweekly( ds['app']);
     }
 
-
 }
 
 function _logout(){
@@ -75,9 +74,6 @@ const dt_ = {
     }],
   },
 }
-
-
-
 
 async function _getusrs(tkn){
     
