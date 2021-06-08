@@ -27,7 +27,7 @@ const spnr = (id)=>{
 
   function getGroup(list){
 
-    let [app,counter,counter2,web,native] = [[],0,0,0,0];
+    let [app,counter,counter2,web,native,all] = [[],0,0,0,0,0];
     list.forEach(item=>{
 
             if (item.type === 'web') {
