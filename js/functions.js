@@ -72,7 +72,6 @@ const spnr = (id)=>{
                     item.score = (item.score*100)/4;
                     app.push(item);
                 }
-                native+=item.score;
             }
         });
         web = (web/counter)*100/4;
