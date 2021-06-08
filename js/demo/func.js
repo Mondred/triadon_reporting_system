@@ -294,7 +294,7 @@ async function _statsTS(tkn,id,moyr){
       let uris = 'https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?company='+sessionStorage.cid+'&period=days&interval=1&no-total=1&user='+id+'&from='+from+'&to='+to+'&timezone=Asia-Manila&group-by=company&limit=5000&token='+tkn;
       const resp = await fetch(
         //'https://api2.timedoctor.com/api/1.0/stats/timesheet/:detail?' + query,
-        'https://api2.timedoctor.com/api/1.0/stats/timesheet/total?' + query,
+        'https://api2.timedoctor.com/api/1.1/stats/timesheet/total?' + query,
         //uris,
         {method: 'GET'}
       );
