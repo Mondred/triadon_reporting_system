@@ -74,6 +74,7 @@ const spnr = (id)=>{
                 native+=item.score;
             }
         });
+        console.log(web);
         console.log(counter);
         web = web/counter
     //console.log(app);
