@@ -43,13 +43,13 @@ const spnr = (id)=>{
                         }
                     });
                 }
-                
+                counter++;
+                web+=item.score;
                 if (shouldAdd) {
                     item.score = (item.score*100)/4;
                     app.push(item);
                 }
-                counter++;
-                web+=item.score;
+                
                 
             }
 
