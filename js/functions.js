@@ -155,7 +155,7 @@ $('#tbl-apps').append(innerhtm);
         //perform : ( ap + pr ) / 2
     } */
 
-    //console.log(apps.allApps);
+    console.log(res);
     let tr = `<h4 class="small font-weight-bold">Apps Utilization <span
     class="float-right" id="aur">${res}%</span></h4>
 <div class="progress mb-4">
