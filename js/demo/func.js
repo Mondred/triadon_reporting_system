@@ -307,7 +307,7 @@ async function _statsTS(tkn,id,moyr){
       data['data'].forEach(res => {
           if (res.length) {
             //console.log(res[0].total);
-            let rest = res[0].total + 1800;
+            let rest = res[0].total;
             t.push(_cHr(rest)['h'] +'.'+_cHr(rest)['m']);
           }else{
             t.push(0);
