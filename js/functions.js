@@ -27,7 +27,7 @@ const spnr = (id)=>{
 
   function getGroup(list){
 
-    let [app,score,web,native] = [[],0,0,0];
+    let [app,counter,web,native] = [[],0,0,0];
     list.forEach(item=>{
 
             if (item.type === 'web') {
@@ -49,7 +49,7 @@ const spnr = (id)=>{
                     app.push(item);
                 }
                 web+=item.score;
-
+                counter++;
             }
 
             if (item.type === 'app') {
@@ -73,7 +73,7 @@ const spnr = (id)=>{
                 native+=item.score;
             }
         });
-    web = ((web/app.length)*100)/4;
+        web = ((web/counter)*100)/4;
     //console.log(app);
 
     return {
