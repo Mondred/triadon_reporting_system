@@ -221,9 +221,9 @@ async function _stats(tkn,id){
       );
       
       const data = await resp.json();
-      //console.log(data['data']['users'][0]);
+      console.log(data['data']['users'][0]);
       
-      $('#thr')[0].innerText = data['data']['users'][0].total.toHHMMSS();
+      /* $('#thr')[0].innerText = data['data']['users'][0].total.toHHMMSS();
       $('#phr')[0].innerText = data['data']['users'][0].prod.toHHMMSS();
       $('#uhr')[0].innerText = data['data']['users'][0].unprod.toHHMMSS();
       $('#ihr')[0].innerText = (data['data']['users'][0].idleMins / 60).toFixed(2);
@@ -274,7 +274,7 @@ async function _stats(tkn,id){
 
 
       $('#act-rating').empty();
-      $('#act-rating').append(rating);
+      $('#act-rating').append(rating); */
 }
 
 async function _statsTS(tkn,id,moyr){
