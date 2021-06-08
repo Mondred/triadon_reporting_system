@@ -216,7 +216,7 @@ async function _stats(tkn,id){
       }).toString();
       
       const resp = await fetch(
-        'https://api2.timedoctor.com/api/1.0/stats/summary-ratio?' + query,
+        'https://api2.timedoctor.com/api/1.1/stats/summary-ratio?' + query,
         {method: 'GET'}
       );
       
