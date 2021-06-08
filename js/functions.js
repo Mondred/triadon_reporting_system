@@ -27,7 +27,7 @@ const spnr = (id)=>{
 
   function getGroup(list){
 
-    let [app,counter,web,native] = [[],0,0,0];
+    let [app,counter,counter2,web,native] = [[],0,0,0,0];
     list.forEach(item=>{
 
             if (item.type === 'web') {
@@ -52,7 +52,7 @@ const spnr = (id)=>{
                 
                 
             }
-
+            
             if (item.type === 'app') {
                 let shouldAdd = true;
                 if (app.length) {
@@ -66,7 +66,8 @@ const spnr = (id)=>{
                         }
                     });
                 }
-                
+                counter2++;
+                native+=item.score;
                 if (shouldAdd) {
                     item.score = (item.score*100)/4;
                     app.push(item);
@@ -74,9 +75,8 @@ const spnr = (id)=>{
                 native+=item.score;
             }
         });
-        console.log(web);
-        console.log(counter);
-        web = web/counter
+        web = (web/counter)*100/4;
+        native = (native/counter2)*100/4;
     //console.log(app);
 
     return {
@@ -160,23 +160,23 @@ $('#tbl-apps').append(innerhtm);
 
     console.log(res);
     let tr = `<h4 class="small font-weight-bold">Apps Utilization <span
-    class="float-right" id="aur">${res}%</span></h4>
+    class="float-right" id="aur">${res.web}%</span></h4>
 <div class="progress mb-4">
-<div class="progress-bar bg-danger" role="progressbar" style="width: ${res}%"
+<div class="progress-bar bg-danger" role="progressbar" style="width: ${res.web}%"
     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
 <h4 class="small font-weight-bold">Native Apps <span
-    class="float-right" id="nar">${res}%</span></h4>
+    class="float-right" id="nar">${res.native}%</span></h4>
 <div class="progress mb-4">
-<div class="progress-bar bg-warning" role="progressbar" style="width: ${res}%"
+<div class="progress-bar bg-warning" role="progressbar" style="width: ${res.native}%"
     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
 <h4 class="small font-weight-bold">Web Apps <span
-    class="float-right" id="war">${res}%</span></h4>
+    class="float-right" id="war">${res.web}%</span></h4>
 <div class="progress mb-4">
-<div class="progress-bar" role="progressbar" style="width: ${res}%"
+<div class="progress-bar" role="progressbar" style="width: ${res.web}%"
     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
 </div>`;
 
