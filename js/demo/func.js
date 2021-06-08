@@ -6,7 +6,7 @@ function getApps(res){
     
     
     if (page ===1) {
-      getRange( res['web'] );
+      getRange( ds['web'] );
     }
     if (page===2) {
       getweekly( ds['app']);
