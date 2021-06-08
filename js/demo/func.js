@@ -300,7 +300,7 @@ async function _statsTS(tkn,id,moyr){
       );
       
       const data = await resp.json();
-      //console.log(data);
+      console.log(data);
 
       
       let i = 1;let t = [];let ds = [];
