@@ -73,7 +73,7 @@ const spnr = (id)=>{
                 native+=item.score;
             }
         });
-        web = ((web/counter)*100)/4;
+        web = web/counter
     //console.log(app);
 
     return {
