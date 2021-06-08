@@ -52,7 +52,7 @@ function getId(id,uname){
   }
   _stats(token,id);
   //_statsSum(token,id,'2021'+fmo);
-  //_statsTS(token,id,'2021'+fmo);
+  _statsTS(token,id,'2021'+fmo);
   _timeUse(token,id);
 }
 
