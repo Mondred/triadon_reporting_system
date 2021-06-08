@@ -48,8 +48,9 @@ const spnr = (id)=>{
                     item.score = (item.score*100)/4;
                     app.push(item);
                 }
-                web+=item.score;
                 counter++;
+                web+=item.score;
+                
             }
 
             if (item.type === 'app') {
@@ -73,6 +74,7 @@ const spnr = (id)=>{
                 native+=item.score;
             }
         });
+        console.log(counter);
         web = web/counter
     //console.log(app);
 
