@@ -307,7 +307,7 @@ async function _statsTS(tkn,id,moyr,mm,dd){
       fdate = moyr;
     }
 
-    from = '20210431T16:00:00.000Z';
+    from = '2021-04-31T16:00:00.000Z';
     const query = new URLSearchParams({
         company: sessionStorage.cid,
         timezone: 'string',
