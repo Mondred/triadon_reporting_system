@@ -225,9 +225,14 @@ async function _stats(tkn,id){
       console.log(data);
       
       $('#thr')[0].innerText = data['data'][0].total.toHHMMSS();
-      $('#phr')[0].innerText = data['data'][0]['score'][3].total.toHHMMSS();
-      $('#uhr')[0].innerText = data['data'][0]['score'][0].total.toHHMMSS();
-      $('#ihr')[0].innerText = data['data'][0]['score'][1].total.toHHMMSS();
+      // $('#phr')[0].innerText = data['data'][0]['score'][3].total.toHHMMSS();
+      // $('#uhr')[0].innerText = data['data'][0]['score'][0].total.toHHMMSS();
+      // $('#ihr')[0].innerText = data['data'][0]['score'][1].total.toHHMMSS();
+      data['data'][0]['score'].forEach(t=>{
+        $('#phr')[0].innerText = (t.id === 4) ? t.total: '';
+        $('#uhr')[0].innerText = (t.id === 2) ? t.total: '';
+        $('#ihr')[0].innerText = (t.id === 3) ? t.total: '';
+      })
           
       /*let pdr = _toPercent(data['data']['users'][0].prodRatio);
       let upr = _toPercent(data['data']['users'][0].unprodRatio);
