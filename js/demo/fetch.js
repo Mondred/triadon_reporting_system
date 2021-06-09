@@ -36,8 +36,11 @@ if (sessionStorage.token) {
 function getId(id,uname){
   fmo = $('#fmo option:selected').attr('name');
   tmo = $('#tmo option:selected').attr('name');
-  from = '2021-'+ fmo+'-'+$('#fdy').val()+'T16:00:00.000Z';
-  to = '2021-'+ tmo+'-'+$('#tdy').val()+'T16:00:00.000Z';
+  fdy = $('#fdy').val();
+  tdy = $('#tdy').val();
+
+  from = '2021-'+ fmo+'-'+fdy+'T16:00:00.000Z';
+  to = '2021-'+ tmo+'-'+tdy+'T16:00:00.000Z';
   //let from = '2021-05-01T05:00:00.000Z';
   //let sto = '2021-05-15T20:00:00.001Z';
   sd = parseInt($('#fdy').val());
@@ -52,7 +55,7 @@ function getId(id,uname){
   }
   _stats(token,id);
   //_statsSum(token,id,'2021'+fmo);
-  _statsTS(token,id,'2021'+fmo);
+  _statsTS(token,id,'2021'+fmo,fmo,fdy);
   _timeUse(token,id);
 }
 

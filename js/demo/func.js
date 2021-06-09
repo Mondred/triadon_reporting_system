@@ -296,7 +296,7 @@ async function _stats(tkn,id){
       $('#act-rating').append(rating);
 }
 
-async function _statsTS(tkn,id,moyr){
+async function _statsTS(tkn,id,moyr,mm,dd){
     const query = new URLSearchParams({
         company: sessionStorage.cid,
         timezone: 'string',
@@ -335,31 +335,18 @@ async function _statsTS(tkn,id,moyr){
           }
           i+=1;
       }); 
-      //console.log(data['data']); //*/
-     /*
-       let i = 1;let t = [];let ds = [];
       
-      data['data'][0].forEach(res => {
-          if(res.mode){
-            //console.log(res.mode[0].time.toHHMMSS());
-            console.log(res.mode[0].time);
-            t.push(_cHr(res.mode[0].time)['h'] +'.'+_cHr(res.mode[0].time)['m']);
-          }else{
-              //console.log(0);
-              t.push(0);
-          }
-          i+=1;
-      }); //*/
-      //console.log(data['data']);
-      
+      var cdate = new Date(), y = cdate.getFullYear(), m = cdate.getMonth()-1;
+      var firstDay = new Date(y, m, 1);
+      var lastDay = new Date(y, m + 1, 0);
 
-      console.log(t);
+      //console.log(t);
       for (let index = 1; index < i; index++) {
         //console.log(index);
         let d = moyr+String(sd).padStart(2,'0');
         
         //let d = '202104' + String(sd).toString();
-		    //console.log(d);
+		    console.log(d);
         let thisday = moment(d).format('MMM Do');
         //console.log(thisday);
         ds.push(thisday); 
