@@ -2,7 +2,7 @@
 
     //spnr('.tt-hr')
 
-})(jQuery);
+
 
 
 async const web_apps = (id,date_range) => {
@@ -17,8 +17,6 @@ async const web_apps = (id,date_range) => {
     //let sto = '2021-05-15T20:00:00.001Z';
     sd = parseInt($('#fdy').val());
     rset = sd;
-    $('#nameofuser').text(uname);
-    $('#reportperiod').text(moment(fmo).format('MMM') + ' ' +  sd + ' - ' +$('#tdy').val() + ' 2021');
     
     const query = new URLSearchParams({
         period: 'days',
@@ -43,6 +41,9 @@ async const web_apps = (id,date_range) => {
       );
       
       const data = await resp.json();
-  
-      getApps(data);
+      console.log(data);
+      //getApps(data);
 };
+
+
+})(jQuery);
