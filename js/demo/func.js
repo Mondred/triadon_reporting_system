@@ -298,13 +298,14 @@ async function _stats(tkn,id){
 
 async function _statsTS(tkn,id,moyr,mm,dd){
 
-    
+    let fdate;
     if (dd === '01') {
-      var lastDay = new Date('2021', mm + 1, 0);
-      moyr = lastDay;
+      let ldate = new Date('2021', mm + 1, 0);
+
+      fdate = '2021'+String((mm-1)).padStart(2,'0')+String(moyr.getDate()).padStart(2,'0')+'T16:00:00.000Z';
+    }else{
+      fdate = moyr;
     }
-    let ffrom = '2021'+mm+String(moyr.getDate()).padStart(2,'0')+'T16:00:00.000Z';
-    console.log(ffrom);
 
     const query = new URLSearchParams({
         company: sessionStorage.cid,
@@ -319,8 +320,8 @@ async function _statsTS(tkn,id,moyr,mm,dd){
         sort: 'id',
         token: tkn
       }).toString();
-      let uris = 'https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?company='+sessionStorage.cid+'&period=days&interval=1&no-total=1&user='+id+'&from='+ffrom+'&to='+to+'&timezone=Asia-Manila&group-by=company&limit=5000&token='+tkn;
-      let tsheet = `https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?period=days&interval=1&no-total=1&user=${id}&from=${from}&to=${to}&timezone=Asia/Manila&group-by=company&ratio=score&limit=5000&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
+      let uris = 'https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?company='+sessionStorage.cid+'&period=days&interval=1&no-total=1&user='+id+'&from='+from+'&to='+to+'&timezone=Asia-Manila&group-by=company&limit=5000&token='+tkn;
+      let tsheet = `https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?period=days&interval=1&no-total=1&user=${id}&from=${fdate}&to=${to}&timezone=Asia/Manila&group-by=company&ratio=score&limit=5000&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
       const resp = await fetch(
         //'https://api2.timedoctor.com/api/1.0/stats/timesheet/:detail?' + query,
         //'https://api2.timedoctor.com/api/1.1/stats/timesheet/total?' + query,
