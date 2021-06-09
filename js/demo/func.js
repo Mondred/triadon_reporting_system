@@ -237,11 +237,11 @@ async function _stats(tkn,id){
           s2.push(t);
           $('#uhr')[0].innerText = t.total.toHHMMSS();
         }
-        if (t.id === '3') {
+        if (t.id === '0') {
           s3.push(t);
           $('#ihr')[0].innerText = t.total.toHHMMSS();
         }
-        if (t.id === '0') {
+        if (t.id === '3') {
           s4.push(t);
         }
         
