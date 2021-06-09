@@ -234,11 +234,11 @@ async function _stats(tkn,id){
         $('#uhr')[0].innerText = (t.id === '2') ? t.total: '';
         $('#ihr')[0].innerText = (t.id === '3') ? t.total: '';
         if (t.id === '4') {
-          $('#phr')[0].innerText = t.id;
+          $('#phr')[0].innerText = t.total;
         }else if(t.id === '2'){
-          $('#uhr')[0].innerText = t.id;
+          $('#uhr')[0].innerText = t.total;
         }else if(t.id === '3'){
-          $('#ihr')[0].innerText = t.id;
+          $('#ihr')[0].innerText = t.total;
         }
       });
           
