@@ -354,7 +354,7 @@ async function _statsTS(tkn,id,moyr,mm,dd){
 
       console.log(t);
 
-      for (let index = 1; index < i; index++) {
+      for (let index = 0; index < i; index++) {
         //console.log(index);
         let d = moyr+String(sd).padStart(2,'0');
         
