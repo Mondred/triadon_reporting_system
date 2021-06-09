@@ -303,7 +303,7 @@ async function _statsTS(tkn,id,moyr,mm,dd){
       moyr = lastDay;
 
     }
-    console.log(moyr);
+    console.log(moyr.getMonth());
     const query = new URLSearchParams({
         company: sessionStorage.cid,
         timezone: 'string',
