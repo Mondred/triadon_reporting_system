@@ -302,9 +302,9 @@ async function _statsTS(tkn,id,moyr,mm,dd){
     if (dd === '01') {
       var lastDay = new Date('2021', mm + 1, 0);
       moyr = lastDay;
-
+      mm = m-1;
     }
-    let ffrom = '2021'+String(moyr.getMonth()+1).padStart(2,'0')+String(moyr.getDate()).padStart(2,'0')+'T16:00:00.000Z';
+    let ffrom = '2021'+String(mm).padStart(2,'0')+String(moyr.getDate()).padStart(2,'0')+'T16:00:00.000Z';
     console.log(ffrom);
 
     const query = new URLSearchParams({
