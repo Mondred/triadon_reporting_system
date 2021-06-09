@@ -233,7 +233,14 @@ async function _stats(tkn,id){
         $('#phr')[0].innerText = (t.id === '4') ? t.total: '';
         $('#uhr')[0].innerText = (t.id === '2') ? t.total: '';
         $('#ihr')[0].innerText = (t.id === '3') ? t.total: '';
-      })
+        if (t.id === '4') {
+          $('#phr')[0].innerText = t.id;
+        }else if(t.id === '2'){
+          $('#uhr')[0].innerText = t.id;
+        }else if(t.id === '3'){
+          $('#ihr')[0].innerText = t.id;
+        }
+      });
           
       /*let pdr = _toPercent(data['data']['users'][0].prodRatio);
       let upr = _toPercent(data['data']['users'][0].unprodRatio);
