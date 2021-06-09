@@ -20,8 +20,8 @@ async function web_apps(id){
       timezome: 'Asia/Manila',
       user: id, // all-on-reports
       //group-by:company,
-      ratio:score,
-      fields:userID,
+      ratio:'score',
+      fields:'userID',
       limit:5000,
       token: tkn,
       company: sessionStorage.cid
