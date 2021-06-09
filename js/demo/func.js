@@ -225,9 +225,6 @@ async function _stats(tkn,id){
       console.log(data);
       
       $('#thr')[0].innerText = data['data'][0].total.toHHMMSS();
-      // $('#phr')[0].innerText = data['data'][0]['score'][3].total.toHHMMSS();
-      // $('#uhr')[0].innerText = data['data'][0]['score'][0].total.toHHMMSS();
-      // $('#ihr')[0].innerText = data['data'][0]['score'][1].total.toHHMMSS();
 
       let sr = data['data'][0]['score'];
       let [s1,s2,s3,s4] = [[],[],[],[]];
@@ -236,11 +233,11 @@ async function _stats(tkn,id){
           s1.push(t);
           $('#phr')[0].innerText = t.total.toHHMMSS();
         }
-        if (t.id === '3') {
+        if (t.id === '2') {
           s2.push(t);
           $('#uhr')[0].innerText = t.total.toHHMMSS();
         }
-        if (t.id === '2') {
+        if (t.id === '3') {
           s3.push(t);
           $('#ihr')[0].innerText = t.total.toHHMMSS();
         }
@@ -250,9 +247,9 @@ async function _stats(tkn,id){
         
       });
           
-      /*let pdr = _toPercent(data['data']['users'][0].prodRatio);
-      let upr = _toPercent(data['data']['users'][0].unprodRatio);
-      let imr = _toPercent(data['data']['users'][0].idleMinsRatio);
+      let pdr = _toPercent(s1.ratio);
+      let upr = _toPercent(s2.ratio);
+      let imr = _toPercent(s3.ratio);
       let rating = `<h4 class="small font-weight-bold">Productivity <span
               class="float-right" id="pr">${pdr}</span></h4>
       <div class="progress mb-4">
@@ -296,7 +293,7 @@ async function _stats(tkn,id){
 
 
       $('#act-rating').empty();
-      $('#act-rating').append(rating); */
+      $('#act-rating').append(rating);
 }
 
 async function _statsTS(tkn,id,moyr){
