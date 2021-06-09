@@ -246,7 +246,7 @@ async function _stats(tkn,id){
         }
         
       });
-          
+      console.log(s1);
       let pdr = s1.ratio;
       let upr = s2.ratio;
       let imr = s3.ratio;
