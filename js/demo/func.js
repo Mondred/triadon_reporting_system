@@ -222,7 +222,7 @@ async function _stats(tkn,id){
       );
       
       const data = await resp.json();
-      console.log(data);
+      //console.log(data);
       
       $('#thr')[0].innerText = data['data'][0].total.toHHMMSS();
 
@@ -249,7 +249,7 @@ async function _stats(tkn,id){
       let pdr = _toPercent(s1[0].ratio);
       let upr = _toPercent(s2[0].ratio);
       let imr = _toPercent(s3[0].ratio);
-      
+
       let rating = `<h4 class="small font-weight-bold">Productivity <span
               class="float-right" id="pr">${pdr}</span></h4>
       <div class="progress mb-4">
@@ -311,9 +311,11 @@ async function _statsTS(tkn,id,moyr){
         token: tkn
       }).toString();
       let uris = 'https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?company='+sessionStorage.cid+'&period=days&interval=1&no-total=1&user='+id+'&from='+from+'&to='+to+'&timezone=Asia-Manila&group-by=company&limit=5000&token='+tkn;
+      let tsheet = `https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?period=days&interval=1&no-total=1&user=${id}&from=${from}&to=${to}&timezone=Asia/Manila&group-by=company&ratio=score&limit=5000&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
       const resp = await fetch(
         //'https://api2.timedoctor.com/api/1.0/stats/timesheet/:detail?' + query,
-        'https://api2.timedoctor.com/api/1.1/stats/timesheet/total?' + query,
+        //'https://api2.timedoctor.com/api/1.1/stats/timesheet/total?' + query,
+        tsheet,
         //uris,
         {method: 'GET'}
       );
