@@ -244,12 +244,15 @@ async function _stats(tkn,id){
           s3.push(t);
         }
         if (t.id === '0') {
-          s3.push(t);
+          s4.push(t);
         }
         
       });
 
-      console.log(s1,s2,s3,s4);
+      console.log(s1);
+      console.log(s2);
+      console.log(s3);
+      console.log(s4);
           
       /*let pdr = _toPercent(data['data']['users'][0].prodRatio);
       let upr = _toPercent(data['data']['users'][0].unprodRatio);
