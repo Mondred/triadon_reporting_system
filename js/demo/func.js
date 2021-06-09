@@ -232,16 +232,17 @@ async function _stats(tkn,id){
       let sr = data['data'][0]['score'];
       let [s1,s2,s3,s4] = [[],[],[],[]];
       sr.forEach(t=>{
-        
-        //console.log(t.id,t.total);
         if (t.id === '4') {
           s1.push(t);
+          $('#phr')[0].innerText = t.total;
         }
         if (t.id === '3') {
           s2.push(t);
+          $('#uhr')[0].innerText = t.total;
         }
         if (t.id === '2') {
           s3.push(t);
+          $('#ihr')[0].innerText = t.total;
         }
         if (t.id === '0') {
           s4.push(t);
