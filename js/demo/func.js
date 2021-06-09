@@ -299,7 +299,7 @@ async function _stats(tkn,id){
 async function _statsTS(tkn,id,moyr,mm,dd){
 
     if (dd === '01') {
-      var lastDay = new Date(y, mm - 1, 0);
+      var lastDay = new Date('2021', mm - 1, 0);
       moyr = lastDay;
 
     }
