@@ -297,6 +297,13 @@ async function _stats(tkn,id){
 }
 
 async function _statsTS(tkn,id,moyr,mm,dd){
+
+    if (dd === '01') {
+      var lastDay = new Date(y, mm - 1, 0);
+      moyr = lastDay;
+
+    }
+    console.log(moyr);
     const query = new URLSearchParams({
         company: sessionStorage.cid,
         timezone: 'string',
@@ -336,9 +343,10 @@ async function _statsTS(tkn,id,moyr,mm,dd){
           i+=1;
       }); 
       
-      var cdate = new Date(), y = cdate.getFullYear(), m = cdate.getMonth()-1;
+      /* var cdate = new Date(), y = cdate.getFullYear(), m = cdate.getMonth()-1;
       var firstDay = new Date(y, m, 1);
-      var lastDay = new Date(y, m + 1, 0);
+      var lastDay = new Date(y, m + 1, 0); */
+
 
       console.log(t);
 
