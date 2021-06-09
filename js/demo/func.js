@@ -222,7 +222,7 @@ async function _stats(tkn,id){
       );
       
       const data = await resp.json();
-      console.log(data['data']['users'][0]);
+      console.log(data);
       
       /* $('#thr')[0].innerText = data['data']['users'][0].total.toHHMMSS();
       $('#phr')[0].innerText = data['data']['users'][0].prod.toHHMMSS();
