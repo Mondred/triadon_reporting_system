@@ -206,7 +206,7 @@ async function _gettsk(tkn,id){
 
 async function _stats(tkn,id){
     const query = new URLSearchParams({
-        company: sessionStorage.cid,
+        company: sessionStorage.cid, //XqJa3WR_OAAEovRA
         user: id, //all-on-reports
         fields: 'name',
         from: from,  //2021-06-07T16:00:00.000Z&to=2021-06-08T16:00:00.000Z
@@ -214,7 +214,9 @@ async function _stats(tkn,id){
         sort: 'userId',
         token: tkn //1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI
       }).toString();
-      let sql = `https://api2.timedoctor.com/api/1.1/stats/category-total?from=${from}&to=${to}&timezone=Asia/Manila&user=${id}&group-by=userId&ratio=score&resolve=userId&limit=20&sort=_total&page=0&token=${tkn}&company=XqJa3WR_OAAEovRA`;
+      root = `https://api2.timedoctor.com/api/1.1/stats/category-total?`;
+      params = `group-by=userId&ratio=score&resolve=userId&limit=20&sort=_total&page=0`;
+      let sql = `${root}from=${from}&to=${to}&timezone=Asia/Manila&user=${id}&${params}&token=${tkn}&company=${sessionStorage.cid}`;
       const resp = await fetch(
         //'https://api2.timedoctor.com/api/1.1/stats/summary-ratio?' + query,
         sql,
