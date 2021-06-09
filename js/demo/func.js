@@ -332,13 +332,13 @@ async function _statsTS(tkn,id,moyr,mm,dd){
       );
       
       const data = await resp.json();
-      console.log(data);
+      //console.log(data);
 
       
       let i = 0;let t = [];let ds = [];
       data['data'].forEach(res => {
           if (res.length) {
-            console.log(res[0].total);
+            //console.log(res[0].total);
             let rest = res[0].total;
             t.push(_cHr(rest)['h'] +'.'+_cHr(rest)['m']);
           }else{
@@ -352,14 +352,14 @@ async function _statsTS(tkn,id,moyr,mm,dd){
       var lastDay = new Date(y, m + 1, 0); */
 
 
-      console.log(t);
+      //console.log(t);
 
       for (let index = 0; index < i; index++) {
         //console.log(index);
         let d = moyr+String(sd).padStart(2,'0');
         
         //let d = '202104' + String(sd).toString();
-		    console.log(d);
+		    //console.log(d);
         let thisday = moment(d).format('MMM Do');
         //console.log(thisday);
         ds.push(thisday); 
