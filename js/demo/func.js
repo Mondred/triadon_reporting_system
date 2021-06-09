@@ -215,7 +215,7 @@ async function _stats(tkn,id){
         token: tkn //1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI
       }).toString();
       root = `https://api2.timedoctor.com/api/1.1/stats/category-total?`;
-      params = `group-by=userId&ratio=score&resolve=userId&limit=20&sort=_total&page=0`;
+      params = `group-by=dated&ratio=score&resolve=userId&limit=20&sort=_total&page=0`;
       let sql = `${root}from=${from}&to=${to}&timezone=Asia/Manila&user=${id}&${params}&token=${tkn}&company=${sessionStorage.cid}`;
       const resp = await fetch(
         //'https://api2.timedoctor.com/api/1.1/stats/summary-ratio?' + query,
@@ -224,7 +224,7 @@ async function _stats(tkn,id){
       );
       
       const data = await resp.json();
-      //console.log(data);
+      console.log(data);
       
       $('#thr')[0].innerText = data['data'][0].total.toHHMMSS();
 
