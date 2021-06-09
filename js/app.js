@@ -23,7 +23,7 @@ async function web_apps(id){
       ratio:'score',
       fields:'userID',
       limit:5000,
-      token: tkn,
+      token: sessionStorage.token,
       company: sessionStorage.cid
     }).toString();
     let sql = `https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?${query}`;
