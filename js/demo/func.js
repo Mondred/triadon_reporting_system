@@ -233,7 +233,7 @@ async function _stats(tkn,id){
       let [s1,s2,s3,s4] = [[],[],[],[]];
       sr.forEach(t=>{
         
-        console.log(t.id,t.total);
+        //console.log(t.id,t.total);
         if (t.id === '4') {
           s1.push(t);
         }
