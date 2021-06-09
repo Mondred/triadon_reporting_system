@@ -5,7 +5,7 @@
 
 
 
-async let web_apps = (id,date_range) => {
+async function web_apps(id,date_range){
     fmo = $('#fmo option:selected').attr('name');
     tmo = $('#tmo option:selected').attr('name');
     fdy = $('#fdy').val();
