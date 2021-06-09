@@ -353,7 +353,7 @@ async function _statsTS(tkn,id,moyr){
       //console.log(data['data']);
       
 
-      //console.log(t);
+      console.log(t);
       for (let index = 1; index < i; index++) {
         //console.log(index);
         let d = moyr+String(sd).padStart(2,'0');
