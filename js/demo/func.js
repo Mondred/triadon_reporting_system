@@ -224,12 +224,12 @@ async function _stats(tkn,id){
       const data = await resp.json();
       console.log(data);
       
-      /* $('#thr')[0].innerText = data['data']['users'][0].total.toHHMMSS();
-      $('#phr')[0].innerText = data['data']['users'][0].prod.toHHMMSS();
-      $('#uhr')[0].innerText = data['data']['users'][0].unprod.toHHMMSS();
-      $('#ihr')[0].innerText = (data['data']['users'][0].idleMins / 60).toFixed(2);
+      $('#thr')[0].innerText = data['data'][0].total.toHHMMSS();
+      $('#phr')[0].innerText = data['data'][0]['score'][0].total.toHHMMSS();
+      $('#uhr')[0].innerText = data['data'][0]['score'][1].total.toHHMMSS();
+      $('#ihr')[0].innerText = data['data'][0]['score'][2].total.toHHMMSS();
           
-      let pdr = _toPercent(data['data']['users'][0].prodRatio);
+      /*let pdr = _toPercent(data['data']['users'][0].prodRatio);
       let upr = _toPercent(data['data']['users'][0].unprodRatio);
       let imr = _toPercent(data['data']['users'][0].idleMinsRatio);
       let rating = `<h4 class="small font-weight-bold">Productivity <span
