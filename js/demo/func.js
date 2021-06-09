@@ -230,11 +230,26 @@ async function _stats(tkn,id){
       // $('#ihr')[0].innerText = data['data'][0]['score'][1].total.toHHMMSS();
 
       let sr = data['data'][0]['score'];
+      let [s1,s2,s3,s4] = [[],[],[],[]];
       sr.forEach(t=>{
         
         console.log(t.id,t.total);
+        if (t.id === '4') {
+          s1.push(t);
+        }
+        if (t.id === '3') {
+          s2.push(t);
+        }
+        if (t.id === '2') {
+          s3.push(t);
+        }
+        if (t.id === '0') {
+          s3.push(t);
+        }
         
       });
+
+      console.log(s1,s2,s3,s4);
           
       /*let pdr = _toPercent(data['data']['users'][0].prodRatio);
       let upr = _toPercent(data['data']['users'][0].unprodRatio);
