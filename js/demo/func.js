@@ -228,21 +228,11 @@ async function _stats(tkn,id){
       // $('#phr')[0].innerText = data['data'][0]['score'][3].total.toHHMMSS();
       // $('#uhr')[0].innerText = data['data'][0]['score'][0].total.toHHMMSS();
       // $('#ihr')[0].innerText = data['data'][0]['score'][1].total.toHHMMSS();
-      data['data'][0]['score'].forEach(t=>{
-        console.log(t.id);
+
+      let sr = data['data'][0]['score'];
+      sr.forEach(t=>{
         
-        switch(t.id) {
-          case 2:
-            $('#uhr')[0].innerText = t.total;
-            break;
-          case 3:
-            $('#ihr')[0].innerText = t.total;
-          case 4:
-            $('#phr')[0].innerText = t.total;
-            break;
-          default:
-            // code block
-        }
+        console.log(t.id,t.total);
         
       });
           
