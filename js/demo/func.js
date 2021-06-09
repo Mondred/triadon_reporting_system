@@ -340,7 +340,8 @@ async function _statsTS(tkn,id,moyr,mm,dd){
       var firstDay = new Date(y, m, 1);
       var lastDay = new Date(y, m + 1, 0);
 
-      //console.log(t);
+      console.log(t);
+
       for (let index = 1; index < i; index++) {
         //console.log(index);
         let d = moyr+String(sd).padStart(2,'0');
