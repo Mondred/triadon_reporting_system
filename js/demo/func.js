@@ -302,7 +302,7 @@ async function _statsTS(tkn,id,moyr,mm,dd){
     if (dd === '01') {
       let ldate = new Date('2021', mm + 1, 0);
 
-      fdate = '2021'+String((mm-1)).padStart(2,'0')+String(moyr.getDate()).padStart(2,'0')+'T16:00:00.000Z';
+      fdate = '2021'+String((mm-1)).padStart(2,'0')+String(ldate.getDate()).padStart(2,'0')+'T16:00:00.000Z';
     }else{
       fdate = moyr;
     }
