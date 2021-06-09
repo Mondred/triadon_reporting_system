@@ -246,9 +246,10 @@ async function _stats(tkn,id){
         }
         
       });
-      let pdr = s1[0].ratio;
-      let upr = s2[0].ratio;
-      let imr = s3[0].ratio;
+      let pdr = _toPercent(s1[0].ratio);
+      let upr = _toPercent(s2[0].ratio);
+      let imr = _toPercent(s3[0].ratio);
+      
       let rating = `<h4 class="small font-weight-bold">Productivity <span
               class="float-right" id="pr">${pdr}</span></h4>
       <div class="progress mb-4">
