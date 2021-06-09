@@ -366,7 +366,7 @@ async function _statsTS(tkn,id,moyr,mm,dd){
         sd+=1;         
       }
       //ds.push(moment('202103'+String(sd).padStart(2,'0')).format('MMM Do'));
-      ds.push(00);
+      //ds.push(00);
       const dt_tl = {
         data: {
           labels: ds,

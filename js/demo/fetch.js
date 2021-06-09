@@ -40,7 +40,7 @@ function getId(id,uname){
   tdy = $('#tdy').val();
 
   from = '2021-'+ fmo+'-'+fdy+'T00:00:00.000Z';
-  to = '2021-'+ tmo+'-'+tdy+'T00:00:00.000Z';
+  to = '2021-'+ tmo+'-'+tdy+'T23:59:00.000Z';
   //let from = '2021-05-01T05:00:00.000Z';
   //let sto = '2021-05-15T20:00:00.001Z';
   sd = parseInt($('#fdy').val());
