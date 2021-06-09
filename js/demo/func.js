@@ -91,7 +91,7 @@ async function _getusrs(tkn){
       //console.log(data);let usrs = [];let usrid = [];
       data['data'].forEach(res =>{
           if (res.role === 'user') {
-              $('#userSelector').append(`<li class="dropdown-item" onclick="getId('${res.id}','${res.name}')" value="${res.name}">${res.name}</li>`);
+              $('#userSelector').append(`<li class="dropdown-item" onclick="web_apps('${res.id}','${res.name}')" value="${res.name}">${res.name}</li>`);
           }
       });
 }
