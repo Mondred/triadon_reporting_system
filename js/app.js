@@ -51,7 +51,31 @@ async function app_top(id,name){
     
     const data = await resp.json();
     console.log(data);
+    
+    let row = [];
+    data['data'].forEach(r => {
 
+          row.push(`
+              <tr>
+                  <td>${r.name}</td>
+                  <td>${r.total.toHHMMSS()}</td>
+                  <td>${0}</td>
+                  <td>${(r.entify==='domain')?'https://'+r.name:r.name}</td>
+                  <td>
+                      <div class="progress" style="height: 3px;">
+                          <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: ${r.score}%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      ${r.score}%
+                  </td>
+              </tr>
+              `);
+    });
+        
+
+    let innerhtm = `${row}`;
+
+    $('#tbl-apps').empty();
+    $('#tbl-apps').append(innerhtm);
 
 };
 
