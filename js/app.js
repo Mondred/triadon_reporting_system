@@ -51,10 +51,31 @@ async function web_apps(id){
 
 
 
+async function _getusrs(tkn){
+    
+  const query = new URLSearchParams({
+      company: sessionStorage.cid,
+      token: tkn
+    }).toString();
+    
+    const resp = await fetch(
+      'https://api2.timedoctor.com/api/1.0/users?' + query,
+      {method: 'GET'}
+    );
+    
+    const data = await resp.json();
+    //console.log(data);let usrs = [];let usrid = [];
+    data['data'].forEach(res =>{
+        if (res.role === 'user') {
+            $('#userSelector').append(`<li class="dropdown-item" onclick="web_apps('${res.id}','${res.name}')" value="${res.name}">${res.name}</li>`);
+        }
+    });
+}
 
 
 
 (function(){
 
+  _getusrs(sessionStorage.token);
     //spnr('.tt-hr')
 })(jQuery);
