@@ -16,13 +16,13 @@ let web_apps = (id,name) => {
   to = '2021-'+ tmo+'-'+tdy+'T16:00:00.000Z';
   sd = parseInt($('#fdy').val());
 
-  app_summ(id);
-  app_top(id);
+  app_summ(id,from,to);
+  app_top(id,from,to);
 }
 
-async function app_summ(id,name){
+async function app_summ(id,f,t){
 
-    let sql = `https://api2.timedoctor.com/api/1.1/stats/category-total?from=${from}&to=${to}&timezone=Asia%2FManila&user=${id}&group-by=userId&ratio=score&resolve=userId&limit=20&sort=_total&page=0&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
+    let sql = `https://api2.timedoctor.com/api/1.1/stats/category-total?from=${f}&to=${t}&timezone=Asia%2FManila&user=${id}&group-by=userId&ratio=score&resolve=userId&limit=20&sort=_total&page=0&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
 
     const resp = await fetch(
       sql,
@@ -40,9 +40,9 @@ async function app_summ(id,name){
     data['data'][0].score.forEach(v =>  (v.id === '2')? $('#ihr')[0].innerText = v.total.toHHMMSS() :'0');
 
 };
-async function app_top(id,name){
+async function app_top(id,f,t){
 
-    let sql = `https://api2.timedoctor.com/api/1.1/stats/category-total?from=${from}&to=${to}&timezone=Asia%2FManila&user=${id}&group-by=comCat%2Cscore&fields=userCat&resolve=comCat&sort=_total&limit=50&filter%5Btotal%5D=60_&page=0&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
+    let sql = `https://api2.timedoctor.com/api/1.1/stats/category-total?from=${f}&to=${t}&timezone=Asia%2FManila&user=${id}&group-by=comCat%2Cscore&fields=userCat&resolve=comCat&sort=_total&limit=500&filter%5Btotal%5D=60_&page=0&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
 
     const resp = await fetch(
       sql,
@@ -63,9 +63,9 @@ async function app_top(id,name){
                   <td>${(r.entify==='domain')?'https://'+r.name:r.name}</td>
                   <td>
                       <div class="progress" style="height: 3px;">
-                          <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: ${r.score}%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                          <div class="progress-bar bg-success animated--fade-in" role="progressbar" style="width: ${(r.score/4)*100}%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      ${r.score}%
+                      ${(r.score/4)*100}%
                   </td>
               </tr>
               `);
