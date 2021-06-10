@@ -53,7 +53,7 @@ const spnr = (id)=>{
                 
             }
             
-            if (item.type === 'app') {
+            /*if (item.type === 'app') {
                 let shouldAdd = true;
                 if (app.length) {
                     app.forEach(r => {
@@ -72,7 +72,9 @@ const spnr = (id)=>{
                     item.score = (item.score*100)/4;
                     app.push(item);
                 }
-            }
+            } */
+
+            
         });
         web = (web/counter)*100/4;
         native = (native/counter2)*100/4;
