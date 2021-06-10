@@ -324,7 +324,7 @@ async function _statsTS(tkn,id,moyr,mm,dd){
         token: tkn
       }).toString();
       let uris = 'https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?company='+sessionStorage.cid+'&period=days&interval=1&no-total=1&user='+id+'&from='+from+'&to='+to+'&timezone=Asia-Manila&group-by=company&limit=5000&token='+tkn;
-      let tsheet = `https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?period=days&interval=1&no-total=1&user=${id}&from=${from}&to=${to}&timezone=Asia/Manila&group-by=company&ratio=score,start,end,date&limit=5000&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
+      let tsheet = `https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?period=hours&interval=1&no-total=1&user=${id}&from=${from}&to=${to}&timezone=Asia/Manila&group-by=company&ratio=score,start,end,date&limit=5000&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
       const resp = await fetch(
         //'https://api2.timedoctor.com/api/1.0/stats/timesheet/:detail?' + query,
         //'https://api2.timedoctor.com/api/1.1/stats/timesheet/total?' + query,
