@@ -5,7 +5,8 @@ Number.prototype.toHHMMSS = function() {
   return hours + ":" + minutes + ":" + seconds;
 }
 
-async function web_apps(id,name){
+
+let web_apps = (id,name) => {
   fmo = $('#fmo option:selected').attr('name');
   tmo = $('#tmo option:selected').attr('name');
   fdy = $('#fdy').val();
@@ -13,26 +14,13 @@ async function web_apps(id,name){
 
   from = '2021-'+ fmo+'-'+fdy+'T16:00:00.000Z';
   to = '2021-'+ tmo+'-'+tdy+'T16:00:00.000Z';
-  //let from = '2021-05-01T05:00:00.000Z';
-  //let sto = '2021-05-15T20:00:00.001Z';
   sd = parseInt($('#fdy').val());
-  rset = sd;
-  
-  const query = new URLSearchParams({
-      period: 'days',
-      interval:1,
-      //no-total:1,
-      from: from, //2021-06-07T16%3A00%3A00.000Z
-      to: to, //2021-06-08T16%3A00%3A00.000Z
-      timezome: 'Asia/Manila',
-      user: id, // all-on-reports
-      //group-by:company,
-      ratio:'score',
-      fields:'userID',
-      limit:5000,
-      token: sessionStorage.token,
-      company: sessionStorage.cid
-    }).toString();
+
+  app_summ(id);
+  app_top(id);
+}
+
+async function app_summ(id,name){
 
     let sql = `https://api2.timedoctor.com/api/1.1/stats/category-total?from=${from}&to=${to}&timezone=Asia%2FManila&user=${id}&group-by=userId&ratio=score&resolve=userId&limit=20&sort=_total&page=0&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
 
@@ -52,7 +40,20 @@ async function web_apps(id,name){
     data['data'][0].score.forEach(v =>  (v.id === '2')? $('#ihr')[0].innerText = v.total.toHHMMSS() :'0');
 
 };
+async function app_top(id,name){
 
+    let sql = `https://api2.timedoctor.com/api/1.1/stats/category-total?from=${from}&to=${to}&timezone=Asia%2FManila&user=${id}&group-by=comCat%2Cscore&fields=userCat&resolve=comCat&sort=_total&limit=50&filter%5Btotal%5D=60_&page=0&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
+
+    const resp = await fetch(
+      sql,
+      {method: 'GET'}
+    );
+    
+    const data = await resp.json();
+    console.log(data);
+
+
+};
 
 
 
