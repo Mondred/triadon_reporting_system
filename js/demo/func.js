@@ -215,7 +215,7 @@ async function _stats(tkn,id){
         token: tkn //1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI
       }).toString();
       root = `https://api2.timedoctor.com/api/1.1/stats/category-total?`;
-      params = `group-by=userId&ratio=score&resolve=userId&limit=20&sort=date&page=0`;
+      params = `group-by=userId&fields=data,start,end&ratio=score&resolve=userId&limit=20&sort=date&page=0`;
       let sql = `${root}from=${from}&to=${to}&timezone=Asia/Manila&user=${id}&${params}&token=${tkn}&company=${sessionStorage.cid}`;
       const resp = await fetch(
         //'https://api2.timedoctor.com/api/1.1/stats/summary-ratio?' + query,
