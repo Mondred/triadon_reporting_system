@@ -1,4 +1,4 @@
-async function web_apps(id){
+async function web_apps(id,name){
   fmo = $('#fmo option:selected').attr('name');
   tmo = $('#tmo option:selected').attr('name');
   fdy = $('#fdy').val();
