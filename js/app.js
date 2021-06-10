@@ -41,6 +41,13 @@ async function web_apps(id,name){
     const data = await resp.json();
     console.log(data);
     //getApps(data);
+
+    // score id
+    // 4 - prod, 2 - unprod, 
+
+    $('#phr').innerText = data[0].total;
+    $('#uhr').innerText = data[0].score.find('id','2').toString();
+
 };
 
 
