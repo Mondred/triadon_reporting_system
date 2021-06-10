@@ -1,3 +1,10 @@
+Number.prototype.toHHMMSS = function() {
+  var hours = Math.floor(this / 3600) < 10 ? ("00" + Math.floor(this / 3600)).slice(-2) : Math.floor(this / 3600);
+  var minutes = ("00" + Math.floor((this % 3600) / 60)).slice(-2);
+  var seconds = ("00" + (this % 3600) % 60).slice(-2);
+  return hours + ":" + minutes + ":" + seconds;
+}
+
 async function web_apps(id,name){
   fmo = $('#fmo option:selected').attr('name');
   tmo = $('#tmo option:selected').attr('name');
@@ -40,9 +47,9 @@ async function web_apps(id,name){
     // score id
     // 4 - prod, 2 - unprod, 
 
-    $('#phr')[0].innerText = data['data'][0].total;
-    data['data'][0].score.forEach(v =>  (v.id === '4')?$('#uhr')[0].innerText = v.total :'0');
-    data['data'][0].score.forEach(v =>  (v.id === '2')? $('#ihr')[0].innerText = v.total :'0');
+    $('#phr')[0].innerText = data['data'][0].total.toHHMMSS();
+    data['data'][0].score.forEach(v =>  (v.id === '4')?$('#uhr')[0].innerText = v.total.toHHMMSS() :'0');
+    data['data'][0].score.forEach(v =>  (v.id === '2')? $('#ihr')[0].innerText = v.total.toHHMMSS() :'0');
 
 };
 
