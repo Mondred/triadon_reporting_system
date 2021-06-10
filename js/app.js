@@ -4,8 +4,8 @@ async function web_apps(id,name){
   fdy = $('#fdy').val();
   tdy = $('#tdy').val();
 
-  from = '2021-'+ fmo+'-'+fdy+'T00:00:00.000Z';
-  to = '2021-'+ tmo+'-'+tdy+'T23:59:00.000Z';
+  from = '2021-'+ fmo+'-'+fdy+'T16:00:00.000Z';
+  to = '2021-'+ tmo+'-'+tdy+'T16:00:00.000Z';
   //let from = '2021-05-01T05:00:00.000Z';
   //let sto = '2021-05-15T20:00:00.001Z';
   sd = parseInt($('#fdy').val());
@@ -26,10 +26,6 @@ async function web_apps(id,name){
       token: sessionStorage.token,
       company: sessionStorage.cid
     }).toString();
-    
-    //let sql = `https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?${query}`;
-    
-    //'https://api2.timedoctor.com/api/1.0/activity/timeuse?' + query,
 
     let sql = `https://api2.timedoctor.com/api/1.1/stats/category-total?from=${from}&to=${to}&timezone=Asia%2FManila&user=${id}&group-by=userId&ratio=score&resolve=userId&limit=20&sort=_total&page=0&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
 
@@ -39,14 +35,14 @@ async function web_apps(id,name){
     );
     
     const data = await resp.json();
-    console.log(data);
-    //getApps(data);
+    //console.log(data);
 
     // score id
     // 4 - prod, 2 - unprod, 
 
-    $('#phr').innerText = data[0].total;
-    $('#uhr').innerText = data[0].score.find('id','2').toString();
+    $('#phr')[0].innerText = data['data'][0].total;
+    data['data'][0].score.forEach(v =>  (v.id === '4')?$('#uhr')[0].innerText = v.total :'0');
+    data['data'][0].score.forEach(v =>  (v.id === '2')? $('#ihr')[0].innerText = v.total :'0');
 
 };
 
