@@ -9,7 +9,7 @@ function getApps(res){
       getRange( ds );
     }
     if (page===2) {
-      getweekly( ds['app']);
+      getweekly( ds['web']);
     }
 
 }
