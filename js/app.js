@@ -15,8 +15,8 @@ async function web_apps(id,name){
       period: 'days',
       interval:1,
       //no-total:1,
-      from: from,
-      to: to,
+      from: from, //2021-06-07T16%3A00%3A00.000Z
+      to: to, //2021-06-08T16%3A00%3A00.000Z
       timezome: 'Asia/Manila',
       user: id, // all-on-reports
       //group-by:company,
@@ -31,7 +31,7 @@ async function web_apps(id,name){
     
     //'https://api2.timedoctor.com/api/1.0/activity/timeuse?' + query,
 
-    let sql = `https://api2.timedoctor.com/api/1.1/stats/category-total?from=2021-06-07T16%3A00%3A00.000Z&to=2021-06-08T16%3A00%3A00.000Z&timezone=Asia%2FManila&user=all-on-reports&group-by=userId&ratio=score&resolve=userId&limit=20&sort=_total&page=0&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
+    let sql = `https://api2.timedoctor.com/api/1.1/stats/category-total?from=${from}&to=${to}&timezone=Asia%2FManila&user=${id}&group-by=userId&ratio=score&resolve=userId&limit=20&sort=_total&page=0&token=1qFAiv2z4595evpAoLkqI-8uTgFOfojDMOWnat3v7_qI&company=XqJa3WR_OAAEovRA`;
 
     const resp = await fetch(
       sql,
