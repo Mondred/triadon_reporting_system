@@ -29,7 +29,7 @@ async function web_apps(id,name){
     let sql = `https://api2.timedoctor.com/api/1.1/stats/timesheet/category-total?${query}`;
     const resp = await fetch(
       //'https://api2.timedoctor.com/api/1.0/activity/timeuse?' + query,
-
+      sql,
       {method: 'GET'}
     );
     
