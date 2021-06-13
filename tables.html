@@ -359,7 +359,133 @@
 
                 </nav>
                 <!-- End of Topbar -->
+                <div class="tool-option" style="float: right;padding: 0 1.5rem;">
 
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <div style="display: flex;">
+                            <div class="" style="display: flex;align-items: flex-end;margin-right: .2rem;">
+                                <label for="sel1" style="margin-right: .2rem;">From: </label>
+                                <select id="fmo" class="form-control" id="sel1">
+                                    <option name="01">Jan</option>
+                                    <option name="02">Feb</option>
+                                    <option name="03">Mar</option>
+                                    <option name="04">Apr</option>
+                                    <option name="05">May</option>
+                                    <option name="06">Jun</option>
+                                    <option name="07">Jul</option>
+                                    <option name="08">Aug</option>
+                                    <option name="09">Sep</option>
+                                    <option name="10">Oct</option>
+                                    <option name="11">Nov</option>
+                                    <option name="12">Dec</option>
+                                </select>
+                            </div>
+                            <div class="" style="display: flex;align-items: flex-end;margin-right: 1rem;">
+                                <select id="fdy" class="form-control" id="sel1">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                    <option>05</option>
+                                    <option>06</option>
+                                    <option>07</option>
+                                    <option>08</option>
+                                    <option>09</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                    <option>21</option>
+                                    <option>22</option>
+                                    <option>23</option>
+                                    <option>24</option>
+                                    <option>25</option>
+                                    <option>26</option>
+                                    <option>27</option>
+                                    <option>28</option>
+                                    <option>29</option>
+                                    <option>30</option>
+                                    <option>31</option>
+                                </select>
+                            </div>
+                            <div class="" style="display: flex;align-items: flex-end;margin-right: .2rem;">
+                                <label for="sel1" style="margin-right: .2rem;">To: </label>
+                                <select id="tmo" class="form-control" id="sel1">
+                                    <option name="01">Jan</option>
+                                    <option name="02">Feb</option>
+                                    <option name="03">Mar</option>
+                                    <option name="04">Apr</option>
+                                    <option name="05">May</option>
+                                    <option name="06">Jun</option>
+                                    <option name="07">Jul</option>
+                                    <option name="08">Aug</option>
+                                    <option name="09">Sep</option>
+                                    <option name="10">Oct</option>
+                                    <option name="11">Nov</option>
+                                    <option name="12">Dec</option>
+                                </select>
+                            </div>
+                            <div class="" style="display: flex;align-items: flex-end;margin-right: 1rem;">
+                                <select id="tdy" class="form-control" id="sel1">
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                    <option>05</option>
+                                    <option>06</option>
+                                    <option>07</option>
+                                    <option>08</option>
+                                    <option>09</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                    <option>21</option>
+                                    <option>22</option>
+                                    <option>23</option>
+                                    <option>24</option>
+                                    <option>25</option>
+                                    <option>26</option>
+                                    <option>27</option>
+                                    <option>28</option>
+                                    <option>29</option>
+                                    <option>30</option>
+                                    <option>31</option>
+                                </select>
+                            </div>
+                            <div class="dropdown no-arrow " style="margin-right: 1rem;">
+
+                                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"
+                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"><i class="fas fa-user fa-sm text-white-50"></i> User
+                                    Selection</a>
+
+                                <ul id="userSelector" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                                </ul>
+                            </div>
+
+                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                                onclick="PrintElements.print(document.getElementsByClassName('container-fluid'))"><i
+                                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+
+                        </div>
+                    </div>
+                </div>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -923,6 +1049,9 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+
+    
+    <script src="/js/app.js"></script>
 
 </body>
 
