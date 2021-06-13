@@ -67,6 +67,7 @@ async function app_top(id,f,t){
                       </div>
                       ${(r.score/4)*100}%
                   </td>
+                  <td>${0}</td>
               </tr>
               `);
     });
